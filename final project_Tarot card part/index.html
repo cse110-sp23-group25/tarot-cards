@@ -2,7 +2,71 @@
 <html>
 <head>
   <title>Card Game</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    /* .card {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            position: absolute;
+            transition: transform 0.5s;
+        } */
+    /* .card {
+      width: 200px;
+      height: 300px;
+      background-image: url("start.png");
+      background-size: cover;
+      border: 1px solid #000;
+      cursor: pointer;
+      margin: 10px;
+    } */
+    .card {
+      width: 200px;
+      height: 300px;
+      background-image: url("start.png");
+      background-size: cover;
+      position: absolute;
+      border: 1px solid #000;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .card.middle {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card.top {
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .card.bottom {
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .card.left {
+            top: 50%;
+            left: 50px;
+            transform: translateY(-50%);
+        }
+
+        .card.right {
+            top: 50%;
+            right: 50px;
+            transform: translateY(-50%);
+        }
+
+
+  </style>
 </head>
 <body>
   <div class="card middle"></div>
@@ -11,6 +75,87 @@
   <div class="card left"></div>
   <div class="card right"></div>
 
-  <script src="ex.js"></script>
+  <script>
+    // store all cards
+    const cardImages_package = [
+    "card_package/world.png",
+    "card_package/tower.jepg",
+    "card_package/temperance.png",
+    "card_package/strength.png",
+    "card_package/stars.png",
+    "card_package/death.png",
+    "card_package/emperor.png",
+    "card_package/chariot.png",
+    "card_package/high priest.png",
+    "card_package/moon.png",
+    "card_package/magician.png",
+    "card_package/hermit.png",
+    "card_package/lovers.png",
+    "card_package/hanged-man.png",
+    "card_package/justice.png",
+    "card_package/fortune.png",
+    "card_package/judgement.png",
+    "card_package/fool.png",
+    "card_package/hierophant.png",
+    "card_package/empress.png",
+    "card_package/devil.png",
+    ];
+
+    // Array of card images
+    function getRandomImage() {
+        const randomIndex = Math.floor(Math.random() * cardImages_package.length);
+        return cardImages_package[randomIndex];
+    }
+
+    var store_cardImages = ["card_package/justice.png", "card_package/image2.png", "card_package/image3.png", "card_package/image4.png", "card_package/image5.png"];
+    //!!!!!
+    //!!!!!
+    // it will repeat here
+    for (let i = 0; i <5;i++){
+        let curr = getRandomImage();
+        while(curr in store_cardImages){
+            curr = getRandomImage();
+        }
+        store_cardImages[i] = curr;
+    }
+    const cardImages = store_cardImages;
+    // const cardImages = ["card_package/justice.png", "card_package/image2.png", "card_package/image3.png", "card_package/image4.png", "card_package/image5.png"];
+
+    // Array to store flipped state of each card
+    var flippedCards = [false, false, false, false, false];
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // Function to handle card click event
+    function flipCard(index) {
+      const card = document.getElementsByClassName('card')[index];
+      const isFlipped = flippedCards[index];
+
+      if (isFlipped) {
+        // Flip back to start.png
+        card.style.backgroundImage = 'url("start.png")';
+      } 
+      else {
+        // Flip to a random card image
+        const shuffledImages = shuffleArray(cardImages);
+        card.style.backgroundImage = `url("${shuffledImages[0]}")`;
+      }
+
+      // Update flipped state
+      flippedCards[index] = !isFlipped;
+    }
+
+    // Add click event listener to each card
+    const cards = document.getElementsByClassName('card');
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].addEventListener('click', () => flipCard(i));
+    }
+  </script>
 </body>
 </html>
