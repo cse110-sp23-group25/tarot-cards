@@ -1,10 +1,28 @@
-  .container{
+  .parent{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .container.pre{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     width: 1000px;
     height:1000px;
     margin: auto;
+    /* border: 1px dashed #ff0000; */
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .container.post{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    width: 1000px;
+    height: 1500px;
+    /* border: 1px dashed #ff0000; */
+    grid-column: 1;
+    grid-row: 1;
   }
   .card {
     width: 200px;
