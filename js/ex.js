@@ -68,6 +68,7 @@ for (let i = 0; i < 5; i++) {
       let card = document.getElementsByClassName('card')[index];
       card.style.backgroundImage = `url("${cardImages[index]}")`;
       numCardsFlipped++;
+      card.classList.toggle('card-flip');
     }
 
     // Update flipped state

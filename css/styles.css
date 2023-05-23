@@ -34,7 +34,15 @@
     /* border: 1px dashed #ff0000; */ /*Dashed Red Line to help with Debugging/Visualization*/
     cursor: pointer;
     margin: 10px;
+    perspective: 1000px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
   }
+
+  .card-flip{
+    transform: rotateY(180deg);
+  }
+
   .card.middle {
     grid-column: 2; 
     grid-row: 2;
