@@ -1,5 +1,5 @@
 // store all cards
-const cardImages_package = { //sun missing?
+const cardImages_package = {
     "World": "../assets/card_package/world.png",
     "Tower": "../assets/card_package/tower.jpeg",
     "Temperance": "../assets/card_package/temperance.png",
@@ -8,7 +8,8 @@ const cardImages_package = { //sun missing?
     "Death": "../assets/card_package/death.png",
     "The Emperor": "../assets/card_package/emperor.png",
     "The Chariot": "../assets/card_package/chariot.png",
-    "High Priest": "../assets/card_package/high priest.png", // remove spaced?
+    "High Priest": "../assets/card_package/high priest.png",
+    "Sun": "../assets/card_package/sun.png",
     "Moon": "../assets/card_package/moon.png",
     "Magician": "../assets/card_package/magician.png",
     "Hermit": "../assets/card_package/hermit.png",
