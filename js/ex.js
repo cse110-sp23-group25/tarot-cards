@@ -58,7 +58,9 @@ for (let i = 0; i < 5; i++) {
 
   // Function to handle card click event
   function flipCard(index) {
-
+    // Play the sound
+    var sound = document.getElementById('sound');
+    sound.play();
     // Check if card has already been flipped
     if (flippedCards[index]) {
       // If already flipped, do nothing
