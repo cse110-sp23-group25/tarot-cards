@@ -22,6 +22,12 @@ const cardImages_package = { //sun missing?
     "The Empress": "../assets/card_package/empress.png",
     "The Devil": "../assets/card_package/devil.png",
 };
+
+//play background sound
+var backgroundSound = document.getElementById('backgroundSound');
+backgroundSound.play();
+
+
 var allFlipped = false;
 
 // Get all card names (this will be an array of strings)
