@@ -1,0 +1,249 @@
+
+{
+    "deck": {
+      "card": [
+        {
+          "name": "The Chariot",
+          "fortunes": [
+            "Your current path is dominated by strong willpower and determination. The Chariot suggests you are firmly in control of your environment and your inner-self.",
+            "In response to the challenge you face, you harness strength, ambition, and perseverance. You are driven by your convictions and armed with clear intent.",
+            "The Chariot highlights challenges in maintaining control and direction in your life. It's a time to be brave, take hold of the reins and steer your life in the direction you want it to go.",
+            "Unchecked aggression or lack of discipline might lead you off course. You must balance the light and shadow aspects of yourself to continue your journey successfully.",
+            "The Chariot as an outcome suggests victory, control, and success. Harness your personal power and drive to achieve your goals."
+            ],
+          "img": "chariot.png"
+        },
+        {
+          "name": "Death",
+          "fortunes": [
+            "A significant change or transformation is taking place in your life. Embrace this time of transition, as it will lead to personal growth.",
+            "Your initial response may be fear or apprehension, but understand that change is a necessary part of life. The old must end for the new to begin.",
+            "The challenge you face involves letting go. Release what no longer serves you and open yourself to the opportunities that await.",
+            "Transformation is inevitable. Resist the urge to fight the change; instead, strive to understand its purpose in your life.",
+            "The outcome of your situation will be a significant transformation. The end of this phase in your life will make way for a fresh start."
+            ],
+          "img": "death.png"
+        },
+              {
+          "name": "The Devil",
+          "fortunes": [
+            "Currently, you may find yourself trapped by certain unhealthy attachments or negative habits. The Devil card suggests an excess of earthly pleasures or materialistic mindset.",
+            "Your initial response may be one of denial or avoidance. It's important to confront the problem directly. Acknowledge the power these vices have over you to start the path to freedom.",
+            "Your challenge is to confront these attachments and negative habits. This is a tough battle as breaking free from such bonds can be difficult, but not impossible.",
+            "Beware of becoming a prisoner of your own freedom. Balance is crucial. Indulging in your desires is not harmful unless it starts controlling you.",
+            "The Devil card as an outcome suggests you'll soon break free from your bonds if you confront them head on. There will be liberation from unhealthy attachments, leading to personal growth."
+            ],
+          "img": "devil.png"
+        },
+              {
+          "name": "The Emperor",
+          "fortunes": [
+            "You're in a position of power and leadership. The Emperor card suggests a strong influence of authority and regulation in your life or your role as a leader.",
+            "Your initial response is to take control and establish laws and order. Your organizational skills and practical outlook can help manage the situation efficiently.",
+            "The challenge here is not to become a tyrant. Leadership requires understanding and compassion, and not just rules and regulations.",
+            "Keep in mind that all great leaders listen to their subjects. Balance authority with benevolence and you will master the situation.",
+            "As an outcome, the Emperor card suggests success through leadership and discipline. A stable environment will be achieved through your efforts."
+            ],
+          "img": "emperor.png"
+        },
+              {
+          "name": "The Empress",
+          "fortunes": [
+            "You are embracing your inner Empress. Abundance, fertility and creativity surround you. Harness this energy to create and nurture what you hold dear.",
+            "Your initial response is one of warmth and generosity. You're eager to share your resources and offer guidance to those around you.",
+            "The challenge you face involves maintaining balance between giving and receiving. Remember, self-care is as important as taking care of others.",
+            "Your nurturing and compassionate side will guide you. Be mindful not to lose yourself while taking care of others. Maintain your individuality.",
+            "The outcome of your situation is likely to result in personal growth and abundance. Your loving and caring approach will bear fruit."
+            ],
+          "img": "empress.png"
+        },
+              {
+          "name": "The Fool",
+          "fortunes": [
+            "This is a time for new beginnings. Embrace the unknown and embark on an adventure. You have the potential to manifest your dreams.",
+            "Your initial response may be fear or apprehension, but remember that every journey begins with a single step. Trust in the process and in your abilities.",
+            "The challenge you face is embracing the unfamiliar and unpredictable. Keep an open mind, as unexpected opportunities may arise.",
+            "Live in the moment and follow your heart. Remember, a leap of faith often precedes the greatest life-changing experiences.",
+            "The outcome of your situation suggests a new journey or beginning. Embrace this change, as it could lead to great personal growth."
+            ],
+          "img": "fool.jpeg"
+        },
+              {
+          "name": "Judgement",
+          "fortunes": [
+            "You're at a crossroads, contemplating a major decision. This is a time of awakening and self-evaluation, requiring you to look inward and trust your judgement.",
+            "You've been reflecting on your past actions and their implications. Your ability to understand your life's trajectory is enabling you to make decisions that align with your higher self.",
+            "You're facing some resistance, possibly self-doubt or external criticism. Listen to constructive feedback but don't let it cloud your judgement. Trust your intuition.",
+            "As the situation unfolds, it's important to practice self-forgiveness. Don't let past mistakes hinder your progress. Use this as an opportunity to learn and make better judgements in the future.",
+            "Your situation culminates in a renewal, a new beginning. Your past experiences have shaped you, and now you are ready to face a new chapter with better judgement and clarity."
+            ],
+          "img":"judgement.png"
+        },
+              {
+          "name": "Justice",
+          "fortunes": [
+            "A situation requiring balance and fairness is at hand. Your actions and their consequences are coming into alignment. The truth will become clear.",
+            "You are feeling called to account for your actions. Being honest with yourself and others will bring about the best outcome.",
+            "You may be facing legal issues or disputes. Navigate this challenging time with integrity, balance, and fairness.",
+            "If the situation seems unjust, do not despair. Make changes to restore balance. Your commitment to fairness and justice will prevail.",
+            "The outcome will be fair, and all will get what they deserve. It might be a time of reckoning, but ultimately, it brings about justice and equilibrium."
+            ],
+          "img": "justice.png"
+        },
+              {
+          "name": "Lovers",
+          "fortunes": [
+            "The Lovers card signifies a significant choice or decision regarding matters of the heart. Follow your intuition and let love guide your path.",
+            "You are experiencing a deep connection or attraction to someone. Trust your feelings and be open to the possibilities that love brings.",
+            "Challenges related to relationships or choices may arise. It's essential to maintain open communication and harmony to navigate these complexities.",
+            "Make decisions based on love and unity. Seek a balance between your heart and mind. Let your values guide your choices.",
+            "The outcome holds the promise of deep love, connection, and harmony. Embrace the union that brings joy and fulfillment to your life."
+            ],
+          "img": "lovers.png"
+        },
+              {
+          "name": "Magician",
+          "fortunes": [
+            "You possess the power to manifest your desires. Tap into your inner resources and take action to create the reality you envision.",
+            "Your initial response is one of confidence and mastery. Use your skills and talents to manifest your goals and bring your ideas to life.",
+            "Challenges may arise as you harness your power. Stay focused and avoid distractions. Trust in your abilities and adapt to overcome obstacles.",
+            "Maintain clarity of intention and ethical conduct. Use your power wisely and responsibly, ensuring your actions align with your highest good and the greater good.",
+            "The outcome brings success and mastery. Your ability to utilize your skills and harness the energy of the universe will lead to significant achievements."
+            ],
+          "img": "magician.png"
+        },
+              {
+          "name": "Stars",
+          "fortunes": [
+            "The Stars card represents hope, inspiration, and guidance. You are being guided towards a path of fulfillment and success. Trust in the universe.",
+            "Your initial response is one of optimism and renewed faith. Embrace the divine guidance and allow your dreams to guide your actions.",
+            "Challenges may arise as you pursue your dreams. Stay focused and have faith in your abilities. Embrace perseverance and trust in the journey.",
+            "Believe in the power of your dreams. Keep your vision alive and take inspired actions towards your goals. The universe is supporting your aspirations.",
+            "The outcome brings a sense of fulfillment and spiritual growth. Your dreams and aspirations are coming to fruition. Embrace the blessings of the universe."
+            ],
+          "img": "stars.png"
+        },
+              {
+          "name": "Moon",
+          "fortunes": [
+            "The Moon card represents intuition, hidden truths, and the subconscious mind. Embrace your inner guidance and trust your instincts.",
+            "Your initial response may be one of uncertainty and confusion. Pay attention to your dreams and subconscious messages to gain clarity.",
+            "Challenges lie in the realm of emotions and fears. Take time to explore and understand your inner depths. Trust the process of self-discovery.",
+            "Embrace the mystery and allow your intuition to guide you. Trust in the unseen forces at play and have faith in your own inner knowing.",
+            "The outcome holds profound personal growth and transformation. Embrace the journey of self-discovery and let your intuition be your guiding light."
+            ],
+          "img": "moon.png"
+        },
+              {
+          "name": "Fortune",
+          "fortunes": [
+            "The Fortune card represents unexpected changes and opportunities. Embrace the twists and turns of life, for they may lead to unforeseen blessings.",
+            "Your initial response may be a mix of excitement and apprehension. Embrace the unknown and remain open to the possibilities that lie ahead.",
+            "Challenges may arise as you navigate uncertain waters. Embrace flexibility and adaptability. Trust that things will work out in your favor.",
+            "Embrace the ebb and flow of life. Recognize that change is inevitable and seek opportunities for growth and expansion amidst the uncertainty.",
+            "The outcome brings unexpected turns of fortune. Be prepared for positive surprises and embrace the new opportunities that come your way."
+            ],
+          "img": "fortune.png"
+        },
+              {
+          "name": "Hanged Man",
+          "fortunes": [
+            "The Hanged Man card represents surrender, letting go, and gaining a new perspective. Embrace the power of release and allow yourself to see things from a different angle.",
+            "Your initial response may be resistance or discomfort. However, surrendering to the present moment and relinquishing control will bring forth greater insights.",
+            "Challenges may arise as you navigate the realm of uncertainty. Embrace patience and trust in the process of surrender. Find peace in letting go.",
+            "Embrace the pause and stillness. Use this time to reflect, gain clarity, and look at situations from a fresh perspective. Trust that the answers will come in due time.",
+            "The outcome brings profound transformation and growth. By surrendering and gaining a new perspective, you will find liberation and move forward with a renewed sense of purpose."
+            ],
+          "img": "hanged-man.png"
+        },
+              {
+          "name": "Hermit",
+          "fortunes": [
+            "The Hermit card represents introspection, solitude, and inner guidance. Embrace the need for solitude and self-reflection to find the answers you seek.",
+            "Your initial response may be a desire for solitude and introspection. Allow yourself the time and space to delve into your inner wisdom.",
+            "Challenges may arise as you navigate the path of self-discovery. Embrace the lessons that come with solitude and trust your inner light to guide you.",
+            "Embrace the wisdom gained from introspection. Trust your inner voice and honor your personal truth. Seek guidance from within as you move forward.",
+            "The outcome brings profound self-awareness and spiritual growth. Through introspection and self-reflection, you will find the answers and guidance you seek."
+            ],
+          "img": "hermit.png"
+        },
+              {
+          "name": "Hierophant",
+          "fortunes": [
+            "The Hierophant card represents tradition, spiritual guidance, and conformity. Seek wisdom from trusted sources and honor the teachings that resonate with your soul.",
+            "Your initial response may be a desire for guidance from established institutions or mentors. Seek wisdom from those who have walked the path before you.",
+            "Challenges may arise as you navigate societal or religious expectations. Find a balance between honoring tradition and staying true to your own beliefs.",
+            "Seek spiritual guidance and knowledge from sources that resonate with your inner truth. Trust your own intuition and find your unique path of spiritual growth.",
+            "The outcome brings a deep connection to your spiritual beliefs and a sense of inner harmony. Embrace the wisdom gained from both tradition and your own spiritual journey."
+            ],
+            "img": "hierophant.png"
+        },
+              {
+          "name": "High Priest",
+          "fortunes": [
+            "The High Priest card represents wisdom, spirituality, and divine guidance. Trust your inner wisdom and seek spiritual insights to navigate your path.",
+            "Your initial response may be a desire for spiritual guidance and connection. Open yourself to receive divine messages and insights from higher realms.",
+            "Challenges may arise as you explore deeper spiritual truths. Embrace the quest for higher knowledge and trust your own intuition as you navigate the path.",
+            "Seek spiritual wisdom and connection from sources that resonate with your soul. Trust your inner guidance and let it lead you towards spiritual growth and enlightenment.",
+            "The outcome brings profound spiritual insights and connection. Embrace the wisdom gained from your spiritual journey and let it guide you towards higher levels of consciousness."
+            ],
+          "img": "high priest.png"
+        },
+              {
+          "name": "Strength",
+          "fortunes": [
+            "The Strength card represents courage, inner strength, and resilience. Tap into your inner power to overcome challenges and face them with confidence.",
+            "Your initial response is one of strength and determination. Harness your inner fortitude to overcome obstacles and persevere in the face of adversity.",
+            "Challenges may test your inner strength and patience. Embrace your courage and trust in your ability to overcome any hurdles that come your way.",
+            "Channel your strength into compassionate action. Show kindness and understanding even in difficult situations. Use your power for the greater good.",
+            "The outcome brings triumph and victory through your inner strength. You have the ability to rise above challenges and achieve success."
+            ],
+          "img": "strength.png"
+        },
+              {
+          "name": "Sun",
+          "fortunes": [
+            "The Sun card represents joy, positivity, and vitality. Embrace the radiant energy of the sun and let it illuminate your path with happiness and fulfillment.",
+            "Your initial response is one of optimism and enthusiasm. Embrace the bright side of life and let your inner light shine in all that you do.",
+            "Challenges may arise, but your positive outlook and resilience will help you overcome them. Trust in the abundance of the universe and stay focused on the positive.",
+            "Let your authentic self shine brightly. Embrace your true nature and share your light with the world. Radiate positivity and inspire those around you.",
+            "The outcome brings great joy and success. Your positive attitude and vibrant energy will attract blessings and open doors to new opportunities."
+            ],
+          "img": "sun.png"
+        },
+              {
+          "name": "Temperance",
+          "fortunes": [
+            "The Temperance card represents balance, harmony, and moderation. Seek a middle ground and find equilibrium in all areas of your life.",
+            "Your initial response is one of seeking harmony and balance. Embrace the need to find moderation and adaptability in your actions and decisions.",
+            "Challenges may arise as you strive for balance. Practice patience and seek compromises to find a harmonious resolution to conflicts.",
+            "Find the middle path and avoid extremes. Embrace the art of blending and harmonizing different aspects of your life to create a sense of wholeness.",
+            "The outcome brings a sense of balance and peace. By integrating opposing forces and finding harmony within, you will experience a greater sense of fulfillment."
+            ],
+          "img": "temperance.png"
+        },
+              {
+          "name": "Tower",
+          "fortunes": [
+            "The Tower card represents sudden upheaval, destruction, and transformation. Embrace the opportunity for change and growth that arises from unexpected circumstances.",
+            "Your initial response may be one of shock or discomfort. However, remember that destruction paves the way for new beginnings and the emergence of something better.",
+            "Challenges may arise as you navigate through turbulent times. Embrace the opportunity for transformation and let go of what no longer serves you.",
+            "Amidst the chaos, seek clarity and learn from the lessons that emerge. Embrace the chance to rebuild and create a stronger foundation for the future.",
+            "The outcome brings profound change and liberation. The destruction clears the path for new possibilities and a fresh start on solid ground."
+            ],
+          "img": "tower.jpeg"
+        },
+              {
+          "name": "World",
+          "fortunes": [
+            "The World card represents completion, fulfillment, and integration. You have reached a significant milestone in your journey, and success is within your grasp.",
+            "Your initial response is one of accomplishment and satisfaction. Celebrate your achievements and acknowledge the growth you have experienced.",
+            "Challenges may arise as you navigate the final stages of your current cycle. Embrace the lessons and experiences that will lead you to completion.",
+            "Reflect on your journey and integrate the lessons you have learned. Embrace the wisdom gained and prepare for the next phase of your life.",
+            "The outcome brings a sense of wholeness and achievement. You have successfully closed one chapter of your life and are ready to embark on new adventures."
+            ],
+          "img": "world.png"
+        }
+        ]
+    }
+  }

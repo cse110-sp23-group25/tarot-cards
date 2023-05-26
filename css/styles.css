@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    width:10px;
+    height :10px;
   }
   .container.pre{
     display: grid;
@@ -71,5 +73,6 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    display: none;
   }
   
