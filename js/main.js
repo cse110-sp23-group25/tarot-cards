@@ -108,30 +108,30 @@ function init () {
                 let fortuneText
 
                 switch (i) {
-                    // dealing with outcome card
-                    case 0:
-                        fortuneText = fortunesOfCard[0]
-                        break
+                // dealing with outcome card
+                case 0:
+                    fortuneText = fortunesOfCard[0]
+                    break
 
-                    // dealing with current situation card
-                    case 1:
-                        fortuneText = fortunesOfCard[1]
-                        break
+                // dealing with current situation card
+                case 1:
+                    fortuneText = fortunesOfCard[1]
+                    break
 
-                    // dealing with challenges card
-                    case 2:
-                        fortuneText = fortunesOfCard[2]
-                        break
+                // dealing with challenges card
+                case 2:
+                    fortuneText = fortunesOfCard[2]
+                    break
 
-                    // dealing with what u can change card
-                    case 3:
-                        fortuneText = fortunesOfCard[3]
-                        break
+                // dealing with what u can change card
+                case 3:
+                    fortuneText = fortunesOfCard[3]
+                    break
 
-                    // dealing with response card
-                    case 4:
-                        fortuneText = fortunesOfCard[4]
-                        break
+                // dealing with response card
+                case 4:
+                    fortuneText = fortunesOfCard[4]
+                    break
                 }
                 fortuneList.push(fortuneText)
             }
