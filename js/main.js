@@ -1,97 +1,94 @@
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', init)
 
-function init() {
+function init () {
+    const NUM_CARDS = 5
+    const PATH = '../assets/card_package/fortunes.json'
+    let fiveChosenCards = []
 
-    const NUM_CARDS = 5;
-    const PATH = "../assets/card_package/fortunes.json";
-    var fiveChosenCards = [];
-
-    class Card{
-        constructor(name, fortunes, img){
-            this.name = name;
-            this.fortunes = fortunes;
-            this.img = img;
+    class Card {
+        constructor (name, fortunes, img) {
+            this.name = name
+            this.fortunes = fortunes
+            this.img = img
         }
 
-        getFortunes(){
-            return this.fortunes;
+        getFortunes () {
+            return this.fortunes
         }
 
-        getImg(){
-            return this.img;
+        getImg () {
+            return this.img
         }
-
     }
 
-    class Deck{
-        constructor(path){
-            this.cards = [];
+    class Deck {
+        constructor (path) {
+            this.cards = []
         }
-    
-        draw(num){
-            let returnCards = [];
-            for(let i = 0; i < num; i++){
-                var tempCard = this.cards[Math.floor(Math.random() * this.cards.length)];
-                while(returnCards.includes(tempCard)){
-                    tempCard = this.cards[Math.floor(Math.random() * this.cards.length)];
+
+        draw (num) {
+            const returnCards = []
+            for (let i = 0; i < num; i++) {
+                let tempCard = this.cards[Math.floor(Math.random() * this.cards.length)]
+                while (returnCards.includes(tempCard)) {
+                    tempCard = this.cards[Math.floor(Math.random() * this.cards.length)]
                 }
-                returnCards.push(tempCard);
+                returnCards.push(tempCard)
             }
-            return returnCards;
+            return returnCards
         }
-
     }
 
-    async function generateDeck(path, deckObj) {
-        const response = await fetch(PATH);
-        const data = await response.json();
+    async function generateDeck (path, deckObj) {
+        const response = await fetch(PATH)
+        const data = await response.json()
 
-        for(let i = 0; i < data.deck.card.length; i++){
-            let tempCard = new Card(data.deck.card[i].name, data.deck.card[i].fortunes, data.deck.card[i].img);
-            deckObj.cards.push(tempCard);
+        for (let i = 0; i < data.deck.card.length; i++) {
+            const tempCard = new Card(data.deck.card[i].name, data.deck.card[i].fortunes, data.deck.card[i].img)
+            deckObj.cards.push(tempCard)
         }
     }
 
     // function will wait to run until entire deck is generated
-    async function main() {
-        var myDeck = new Deck(PATH);
+    async function main () {
+        let myDeck = new Deck(PATH)
 
-        const dummyVar = await generateDeck(PATH, myDeck);
-        var selectedCards = myDeck.draw(NUM_CARDS);
-        fiveChosenCards = selectedCards;
+        await generateDeck(PATH, myDeck)
+        let selectedCards = myDeck.draw(NUM_CARDS)
+        fiveChosenCards = selectedCards
 
-        console.log(selectedCards);
-        numCardsFlipped = 0;
-        let flipped = [false, false, false, false, false];
+        console.log(selectedCards)
+        let numCardsFlipped = 0
+        const flipped = [false, false, false, false, false]
 
-        const cards = document.getElementsByClassName('card');
+        const cards = document.getElementsByClassName('card')
         for (let i = 0; i < cards.length; i++) {
-            cards[i].addEventListener('click', () => flipCard(i));
+            cards[i].addEventListener('click', () => flipCard(i))
         }
 
-        function flipCard(index){
-            console.log('card clicked');
+        function flipCard (index) {
+            console.log('card clicked')
             if (flipped[index]) {
-                return;
+                return
             }
 
-            let currentCard = document.getElementsByClassName('card')[index];
-            currentCard.style.backgroundImage = `url(../assets/card_package/${selectedCards[index].img})`;
-            numCardsFlipped++;
-            currentCard.classList.toggle('card-flip');
+            const currentCard = document.getElementsByClassName('card')[index]
+            currentCard.style.backgroundImage = `url(../assets/card_package/${selectedCards[index].img})`
+            numCardsFlipped++
+            currentCard.classList.toggle('card-flip')
 
             flipped[index] = true;
-            if (numCardsFlipped == 5){
-                allFlipped();
+            if (numCardsFlipped === 5) {
+                allFlipped()
             }
         }
     }
 
-    function allFlipped() {
-        let button = document.getElementById('disp-fort-butt');
-        button.style.display = "block";
+    function allFlipped () {
+        const button = document.getElementById('disp-fort-butt')
+        button.style.display = 'block'
 
-        //on click, load the fortunes and display them
+        // on click, load the fortunes and display them
         /*
         index 0 -> top card (current situation)
         1 -> right card (your initial response)
@@ -100,72 +97,69 @@ function init() {
         4 -> middle card (outcome)
         */
         button.addEventListener('click', () => {
-
             // clear the cards off the page
-            document.body.innerHTML = '';
+            document.body.innerHTML = ''
 
-            var fortuneList = [];
-            
-            for(let i = 0; i < 5; i++){
-                let fortunesOfCard = fiveChosenCards[i].getFortunes();
+            let fortuneList = []
+
+            for (let i = 0; i < 5; i++) {
+                const fortunesOfCard = fiveChosenCards[i].getFortunes()
                 console.log(fortunesOfCard)
-                let fortuneText;
+                let fortuneText
 
-                switch(i){
-                    //dealing with outcome card
+                switch (i) {
+                    // dealing with outcome card
                     case 0:
-                        fortuneText = fortunesOfCard[0];
+                        fortuneText = fortunesOfCard[0]
                         break;
 
                     // dealing with current situation card
                     case 1:
-                        fortuneText = fortunesOfCard[1];
+                        fortuneText = fortunesOfCard[1]
                         break;
 
                     // dealing with challenges card
                     case 2:
-                        fortuneText = fortunesOfCard[2];
+                        fortuneText = fortunesOfCard[2]
                         break;
 
                     // dealing with what u can change card
                     case 3:
-                        fortuneText = fortunesOfCard[3];
+                        fortuneText = fortunesOfCard[3]
                         break;
 
                     // dealing with response card
                     case 4:
-                        fortuneText = fortunesOfCard[4];
+                        fortuneText = fortunesOfCard[4]
                         break;
                 }
-                fortuneList.push(fortuneText);
+                fortuneList.push(fortuneText)
             }
 
-            for(let i = 0; i < 5; i++){
-                let p = document.createElement('p');
-                
+            for (let i = 0; i < 5; i++) {
+                const p = document.createElement('p')
+
                 // Set the inner text of the paragraph to the fortune
-                p.innerText = fortuneList[i];
+                p.innerText = fortuneList[i]
                 
                 // Create an img element for the card image
-                let img = document.createElement('img');
+                const img = document.createElement('img')
 
                 // Set the src attribute of the img element to the image URL
-                img.src = '../assets/card_package/' + fiveChosenCards[i].getImg();
-                
+                img.src = '../assets/card_package/' + fiveChosenCards[i].getImg()
+
                 // Create a div to contain the image and the paragraph
-                let div = document.createElement('div');
+                const div = document.createElement('div')
 
                 // Append the image and the paragraph to the div
-                div.appendChild(img);
-                div.appendChild(p);
+                div.appendChild(img)
+                div.appendChild(p)
 
                 // Append the div to the body
-                document.body.appendChild(div);
+                document.body.appendChild(div)
             }
-
         })
     }
-
+    
     main();
-
 }

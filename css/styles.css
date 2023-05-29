@@ -1,78 +1,88 @@
-  .parent{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    width:10px;
-    height :10px;
-  }
-  .container.pre{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    width: 1000px;
-    height:1000px;
-    margin: auto;
-    /* border: 1px dashed #ff0000; */
-    grid-column: 1;
-    grid-row: 1;
-    z-index: 0;
-  }
-  .container.post{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    width: 1000px;
-    height: 1500px;
-    /* border: 1px dashed #ff0000; */
-    grid-column: 1;
-    grid-row: 1;
-    z-index: -1;
-  }
-  .card {
-    width: 200px;
-    height: 300px;
-    background-image: url("../assets/start.png");
-    background-size: cover;
-    /* border: 1px dashed #ff0000; */ /*Dashed Red Line to help with Debugging/Visualization*/
-    cursor: pointer;
-    margin: 10px;
-    perspective: 1000px;
-    transition: transform 0.5s;
-    transform-style: preserve-3d;
-  }
+.parent {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 10px;
+  height: 10px;
+}
 
-  .card-flip{
-    transform: rotateY(180deg);
-  }
+.container.pre {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 1000px;
+  height: 1000px;
+  margin: auto;
 
-  .card.middle {
-    grid-column: 2; 
-    grid-row: 2;
-  }
-  .card.top {
-    grid-column: 2; 
-    grid-row: 1;
-  }
-  .card.bottom {
-    grid-column: 2; 
-    grid-row: 3;
-  }
-  .card.left {
-    grid-column: 1; 
-    grid-row: 2;
-  }
-  .card.right {
-    grid-column: 3; 
-    grid-row: 2;
-  }
-  #backgroundVideo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    display: none;
-  }
-  
+  /* border: 1px dashed #ff0000; */
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 0;
+}
+
+.container.post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  width: 1000px;
+  height: 1500px;
+
+  /* border: 1px dashed #ff0000; */
+  grid-column: 1;
+  grid-row: 1;
+  z-index: -1;
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+  background-image: url("../assets/start.png");
+  background-size: cover;
+
+  /* border: 1px dashed #ff0000 Dashed Red Line to help with Debugging/Visualization*/
+  cursor: pointer;
+  margin: 10px;
+  perspective: 1000px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card-flip {
+  transform: rotateY(180deg);
+}
+
+.card.middle {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.card.top {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.card.bottom {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.card.left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.card.right {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  display: none;
+}
