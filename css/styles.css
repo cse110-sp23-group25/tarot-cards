@@ -39,7 +39,7 @@
   background-image: url("../assets/start.png");
   background-size: cover;
 
-  /* border: 1px dashed #ff0000 Dashed Red Line to help with Debugging/Visualization*/
+  /* border: 1px dashed #ff0000 Dashed Red Line to help with Debugging/Visualization */
   cursor: pointer;
   margin: 10px;
   perspective: 1000px;

@@ -1,7 +1,9 @@
+# Style Conventions
+
 ## Folder Layout
-- HTML within the /html folder
-- CSS within the /css folder
-- JavaScript within the /js folder
+- HTML within the /HTML folder
+- CSS within the /CSS folder
+- JavaScript within the /JS folder
 - Assets (Images, etc) within the /assets folder
 
 ## Branching
@@ -9,7 +11,7 @@
 
 ## Comments
 - Comment areas of code which may be confusing (comment with purpose, not just for the sake of commenting)
-- Adhere to JSDocs before all functions
+- Adhere to JSDoc before all functions
 
 ## Naming
 - camelCase variables throughout code

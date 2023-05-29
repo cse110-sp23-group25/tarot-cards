@@ -51,10 +51,10 @@ function init () {
 
     // function will wait to run until entire deck is generated
     async function main () {
-        let myDeck = new Deck(PATH)
+        const myDeck = new Deck(PATH)
 
         await generateDeck(PATH, myDeck)
-        let selectedCards = myDeck.draw(NUM_CARDS)
+        const selectedCards = myDeck.draw(NUM_CARDS)
         fiveChosenCards = selectedCards
 
         console.log(selectedCards)
@@ -77,7 +77,7 @@ function init () {
             numCardsFlipped++
             currentCard.classList.toggle('card-flip')
 
-            flipped[index] = true;
+            flipped[index] = true
             if (numCardsFlipped === 5) {
                 allFlipped()
             }
@@ -100,7 +100,7 @@ function init () {
             // clear the cards off the page
             document.body.innerHTML = ''
 
-            let fortuneList = []
+            const fortuneList = []
 
             for (let i = 0; i < 5; i++) {
                 const fortunesOfCard = fiveChosenCards[i].getFortunes()
@@ -111,27 +111,27 @@ function init () {
                     // dealing with outcome card
                     case 0:
                         fortuneText = fortunesOfCard[0]
-                        break;
+                        break
 
                     // dealing with current situation card
                     case 1:
                         fortuneText = fortunesOfCard[1]
-                        break;
+                        break
 
                     // dealing with challenges card
                     case 2:
                         fortuneText = fortunesOfCard[2]
-                        break;
+                        break
 
                     // dealing with what u can change card
                     case 3:
                         fortuneText = fortunesOfCard[3]
-                        break;
+                        break
 
                     // dealing with response card
                     case 4:
                         fortuneText = fortunesOfCard[4]
-                        break;
+                        break
                 }
                 fortuneList.push(fortuneText)
             }
@@ -141,7 +141,7 @@ function init () {
 
                 // Set the inner text of the paragraph to the fortune
                 p.innerText = fortuneList[i]
-                
+
                 // Create an img element for the card image
                 const img = document.createElement('img')
 
@@ -160,6 +160,5 @@ function init () {
             }
         })
     }
-    
-    main();
+    main()
 }
