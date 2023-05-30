@@ -19,7 +19,7 @@ test('Successful card generation with valid parameters', () => {
 
 
 // // Import the functions to be tested
-// const { Card, Deck} = require('./main');
+// const { Card, Deck} = require('../js/main.js');
 
 // // Test the Card class
 // describe('Card', () => {
