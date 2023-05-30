@@ -1,0 +1,1 @@
+const functions = require('../js/main.js');

@@ -5,6 +5,10 @@ function init () {
     const PATH = '../assets/card_package/fortunes.json'
     let fiveChosenCards = []
 
+    /**
+     * This class is to represent a tarot card object. Each card will a name, 5
+     * associated fortunes, and an image. 
+     */
     class Card {
         constructor (name, fortunes, img) {
             this.name = name
@@ -12,20 +16,38 @@ function init () {
             this.img = img
         }
 
+        /**
+         * This method is a getter for the Card's fortunes.
+         * @returns an array of 5 fortunes
+         */
         getFortunes () {
             return this.fortunes
         }
 
+        /**
+         * This method is a getter for the Card's image.
+         * @returns the name of the Card's image
+         */
         getImg () {
             return this.img
         }
     }
 
+    /**
+     * This class is to represent the chosen deck of Tarot card. The deck will
+     * have an array which holds Card objects.
+     */
     class Deck {
         constructor (path) {
             this.cards = []
         }
 
+        /**
+         * This method randomly selects 5 cards out of the Deck. This simulates
+         * the user being randomly dealt 5 tarot cards.
+         * @param num Number of cards to be dealt out
+         * @returns An array of the selected cards
+         */
         draw (num) {
             const returnCards = []
             for (let i = 0; i < num; i++) {
@@ -39,6 +61,13 @@ function init () {
         }
     }
 
+    /**
+     * This function fills the Deck with the proper cards according to which Deck
+     * the user has chosen.
+     * @param path The file path to the JSON file containing deck information
+     * @param deckObj The Deck object that will be filled with cards
+     * @returns N/A
+     */
     async function generateDeck (path, deckObj) {
         const response = await fetch(PATH)
         const data = await response.json()
@@ -49,7 +78,10 @@ function init () {
         }
     }
 
-    // function will wait to run until entire deck is generated
+    /**
+     * This function handles everything that happens after the Deck has been
+     * chosen and generated.
+     */
     async function main () {
         const myDeck = new Deck(PATH)
 
@@ -66,6 +98,11 @@ function init () {
             cards[i].addEventListener('click', () => flipCard(i))
         }
 
+        /**
+         * This function flips a card
+         * @param index The index of the card to be flipped from the `flipped` array
+         * @returns N/A
+         */
         function flipCard (index) {
             console.log('card clicked')
             if (flipped[index]) {
@@ -84,6 +121,11 @@ function init () {
         }
     }
 
+    /**
+     * This function is to present a button once the user has flipped all 5
+     * cards. When the button is clicked, the proper fortunes will be
+     * presented.
+     */
     function allFlipped () {
         const button = document.getElementById('disp-fort-butt')
         button.style.display = 'block'
