@@ -17,3 +17,74 @@ test('Successful card generation with valid parameters', () => {
     expect(validCard).toBe(true);
 });
 
+
+// // Import the functions to be tested
+// const { Card, Deck} = require('./main');
+
+// // Test the Card class
+// describe('Card', () => {
+// //test if the getfortune return the right thing
+//   test('getFortunes should return the array of fortunes', () => {
+//     const fortunes = ['fortune1', 'fortune2', 'fortune3', 'fortune4', 'fortune5'];
+//     const card = new Card('Test Card', fortunes, 'image.png');
+//     var check_equal = (card.getFortunes() == fortunes);
+//     expect(check_equal).toEqual(true);
+//   });
+// //test the wrong result
+//   test('getFortunes should not return the other array of fortunes', () => {
+//     const fortunes = ['fortune1', 'fortune2', 'fortune3', 'fortune4', 'fortune5'];
+//     const wrong_fortunes = ['fortune1', 'fortune2', 'fortune3', 'fortune4', 'fortune5'];
+//     const card = new Card('Test Card', fortunes, 'image.png');
+//     var check_equal = (card.getFortunes() == wrong_fortunes);
+//     expect(check_equal).toBe(false);
+//   });
+
+// //test if getImg return the img name
+//   test('getImg should return the image name', () => {
+//     const card = new Card('Test Card', ['fortune1', 'fortune2'], 'image.png');
+//     var check_equal = (card.getImg() == 'image.png');
+//     expect(check_equal).toBe(true);
+//   });
+
+// //test if getImg return the other img name
+// test('getImg should not return the other image name', () => {
+//     const card = new Card('Test Card', ['fortune1', 'fortune2'], 'image.png');
+//     var check_equal = (card.getImg() == 'image2.png');
+//     expect(check_equal).toBe(false);
+//   });
+// });
+
+// // Test the Deck class
+// describe('Deck', () => {
+//   const path = '../assets/card_package/fortunes.json';
+// //test draw return the right answer
+//   test('draw should return an array of selected cards', () => {
+//     const deck = new Deck(path);
+//     const mockCards = [
+//       new Card('Card 1', ['fortune1', 'fortune2'], 'image1.png'),
+//       new Card('Card 2', ['fortune3', 'fortune4'], 'image2.png'),
+//       new Card('Card 3', ['fortune5', 'fortune6'], 'image3.png'),
+//       new Card('Card 4', ['fortune7', 'fortune8'], 'image4.png'),
+//       new Card('Card 5', ['fortune9', 'fortune10'], 'image5.png'),
+//     ];
+//     deck.cards = mockCards;
+//     const selectedCards = deck.draw(3);
+//     expect(selectedCards).toHaveLength(3);
+// // Ensure the original deck is not modified
+//     expect(deck.cards).toHaveLength(5);
+// // Ensure the selected cards are not from the original deck
+//     expect(mockCards).not.toContainEqual(selectedCards[0]); 
+//   });
+
+// //test generateDeck
+//   test('should fill the deck with cards from the JSON file', async () => {
+//     const path = '../assets/card_package/fortunes.json';
+//     const deck = new Deck(path);
+//     await generateDeck(path, deck);
+//  // Ensure the deck is not empty after generating
+//     expect(deck.cards).not.toHaveLength(0);
+//  // Ensure the cards are instances of Card class
+//     expect(deck.cards[0]).toBeInstanceOf(Card);
+//   });
+
+// });
