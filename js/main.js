@@ -63,22 +63,22 @@ class Deck {
         return returnCards
     }
 
-        /**
+    /**
      * This function fills the Deck with the proper cards according to which Deck
      * the user has chosen.
      * @param path The file path to the JSON file containing deck information
      * @param deckObj The Deck object that will be filled with cards
      * @returns N/A
      */
-        async generateDeck () {
-            const response = await fetch(this.path)
-            const data = await response.json()
-    
-            for (let i = 0; i < data.deck.card.length; i++) {
-                const tempCard = new Card(data.deck.card[i].name, data.deck.card[i].fortunes, data.deck.card[i].img)
-                this.cards.push(tempCard)
-            }
+    async generateDeck () {
+        const response = await fetch(this.path)
+        const data = await response.json()
+
+        for (let i = 0; i < data.deck.card.length; i++) {
+            const tempCard = new Card(data.deck.card[i].name, data.deck.card[i].fortunes, data.deck.card[i].img)
+            this.cards.push(tempCard)
         }
+    }
 }
 
 function init () {
