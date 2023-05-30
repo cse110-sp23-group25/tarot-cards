@@ -3,24 +3,33 @@
 <head>
   <title>Card Game</title>
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <audio id="background-sound" src="../assets/background.wav" loop></audio>
+  <audio id="sound" src="../assets/witch_voice.wav"></audio>
+  <video id="background-video" autoplay loop muted>
+    <source src="../assets/background_video.mp4" type="video/mp4">
+  </video>
 </head>
 <body>
   <div class="parent">
     <div class="container pre">
-      <div class="card middle"></div>
+      
       <div class="card top"></div>
+      <div class="card right"></div>
       <div class="card bottom"></div>
       <div class="card left"></div>
-      <div class="card right"></div>
+      <div class="card middle"></div>
+      
     </div>
   
     <div class="container post" hidden>
     </div>
   </div>
 
-  <div id="button-container" style="position: fixed; bottom: 0; width: 100%; text-align: center;"></div>
+  <div id="button-container" style="position: fixed; bottom: 0; width: 100%; text-align: center;">
+    <button id="disp-fort-butt" hidden>See Fortunes</button>
+  </div>
 
-  <script src="../js/ex.js"></script>
+  <script src="../js/main.js" type="module"></script>
 
 </body>
 </html>
