@@ -57,58 +57,28 @@ test('getImg should not return the other image name', () => {
 // Test the Deck class
 describe('Deck', () => {
   const path = '../assets/card_package/fortunes.json';
+
+  const deck = new Deck(path);
+  const mockCards = [
+    new Card('Card 1', ['fortune1', 'fortune2'], 'image1.png'),
+    new Card('Card 2', ['fortune3', 'fortune4'], 'image2.png'),
+    new Card('Card 3', ['fortune5', 'fortune6'], 'image3.png'),
+    new Card('Card 4', ['fortune7', 'fortune8'], 'image4.png'),
+    new Card('Card 5', ['fortune9', 'fortune10'], 'image5.png'),
+  ];
+  deck.cards = mockCards;
 //test draw return the right answer
   test('draw should return an array of selected cards', () => {
-    const deck = new Deck(path);
-    const mockCards = [
-      new Card('Card 1', ['fortune1', 'fortune2'], 'image1.png'),
-      new Card('Card 2', ['fortune3', 'fortune4'], 'image2.png'),
-      new Card('Card 3', ['fortune5', 'fortune6'], 'image3.png'),
-      new Card('Card 4', ['fortune7', 'fortune8'], 'image4.png'),
-      new Card('Card 5', ['fortune9', 'fortune10'], 'image5.png'),
-    ];
-    deck.cards = mockCards;
     const selectedCards = deck.draw(3);
     expect(selectedCards).toHaveLength(3);
   });
 //test draw didn't return the wrong answer
-test('will draw lost 3 cards', () => {
-    const deck = new Deck(path);
-    const mockCards = [
-      new Card('Card 1', ['fortune1', 'fortune2'], 'image1.png'),
-      new Card('Card 2', ['fortune3', 'fortune4'], 'image2.png'),
-      new Card('Card 3', ['fortune5', 'fortune6'], 'image3.png'),
-      new Card('Card 4', ['fortune7', 'fortune8'], 'image4.png'),
-      new Card('Card 5', ['fortune9', 'fortune10'], 'image5.png'),
-    ];
-    deck.cards = mockCards;
-    const selectedCards = deck.draw(3);
-    expect(selectedCards).not.toHaveLength(0);
-  });
   test('will draw lost some cards', () => {
-    const deck = new Deck(path);
-    const mockCards = [
-      new Card('Card 1', ['fortune1', 'fortune2'], 'image1.png'),
-      new Card('Card 2', ['fortune3', 'fortune4'], 'image2.png'),
-      new Card('Card 3', ['fortune5', 'fortune6'], 'image3.png'),
-      new Card('Card 4', ['fortune7', 'fortune8'], 'image4.png'),
-      new Card('Card 5', ['fortune9', 'fortune10'], 'image5.png'),
-    ];
-    deck.cards = mockCards;
-    const selectedCards = deck.draw(3);
-    const check_length = (selectedCards.length < 3);
+    const selectedCards = deck.draw(4);
+    const check_length = (selectedCards.length < 4);
     expect(check_length).toBe(false);
   });
   test('will draw more cards', () => {
-    const deck = new Deck(path);
-    const mockCards = [
-      new Card('Card 1', ['fortune1', 'fortune2'], 'image1.png'),
-      new Card('Card 2', ['fortune3', 'fortune4'], 'image2.png'),
-      new Card('Card 3', ['fortune5', 'fortune6'], 'image3.png'),
-      new Card('Card 4', ['fortune7', 'fortune8'], 'image4.png'),
-      new Card('Card 5', ['fortune9', 'fortune10'], 'image5.png'),
-    ];
-    deck.cards = mockCards;
     const selectedCards = deck.draw(2);
     const check_length = (selectedCards.length > 2);
     expect(check_length).toBe(false);
