@@ -12,7 +12,7 @@
 
         "jest-puppeteer": "^9.0.0",
 
-        "puppeteer": "^20.4.0"
+        "puppeteer": "^20.5.0"
 
     },
 
@@ -31,6 +31,8 @@
         "jest-fetch-mock": "^3.0.3",
 
         "node-fetch": "^3.3.1",
+
+        "page": "^1.11.6",
 
         "whatwg-fetch": "^3.6.2"
 

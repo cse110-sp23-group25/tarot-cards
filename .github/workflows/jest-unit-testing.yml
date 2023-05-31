@@ -5,6 +5,7 @@ on:
       - main
       - working
       - working-refactor
+      - workingTest
   pull_request:
     branches:
       - main

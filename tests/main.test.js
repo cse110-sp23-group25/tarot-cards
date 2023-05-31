@@ -86,3 +86,43 @@ describe('Deck', () => {
         expect(check_length).toBe(false);
     });
 });
+
+describe('Basic user flow for Website', () => {
+    // First, visit the website
+    beforeAll(async () => {
+      await page.goto('http://127.0.0.1:5500/html/index.html');
+    });
+
+
+  // check if there is 5 cards total
+    it('check if there is 5 cards total', async () => {
+      console.log('click on not flipped card');
+      var all_cards = await page.$$('card');
+      // Expect there are five cards total
+      expect(all_cards.length==5).toBe(true);
+    });
+//check if flip function works
+    it('click on a card that is not flipped', async () => {
+      console.log('click on not flipped card');
+      var all_cards = await page.$$('card');
+      //get the button of one card
+      var button = await all_cards[0].$('button');
+      await button.click();
+      var check = (all_cards[0].getProperties("background-image")!= url("../assets/start.png"));
+      expect(check).toBe(true);
+    }); 
+
+    it('click on a card that is flipped', async () => {
+      console.log('click on flipped card');
+      var all_cards = await page.$$('card');
+      //get the button of one card
+      var button = await all_cards[0].$('button');
+      await button.click();
+      var img_of_it = all_cards[0].getProperties("background-image")
+      await button.click();
+      var check = (all_cards[0].getProperties("background-image")!= img_of_it);
+      expect(check).toBe(true);
+    }); 
+
+
+});
