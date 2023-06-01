@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', init)
+window.addEventListener('DOMContentLoaded', init);
 
 /**
  * This class is to represent a tarot card object. Each card will a name, 5
@@ -52,7 +52,7 @@ class Deck {
      * @returns An array of the selected cards
      */
     draw (num) {
-        const returnCards = []
+        const returnCards = [];
         for (let i = 0; i < num; i++) {
             let tempCard = this.cards[Math.floor(Math.random() * this.cards.length)];
             while (returnCards.includes(tempCard)) {
@@ -208,7 +208,7 @@ function init () {
                 // Append the div to the body
                 document.body.appendChild(div);
             }
-        })
+        });
     }
     main();
 }
