@@ -20,7 +20,7 @@
 
     "scripts": {
 
-        "build": "babel ./src -d lib",
+        "build": "babel . -d lib",
 
         "test": "jest"
 
