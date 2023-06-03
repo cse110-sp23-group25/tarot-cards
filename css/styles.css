@@ -94,10 +94,12 @@ body {
     background-color: #79abed;
     box-shadow: 0 0 5px #79abed;
   }
+
   50% {
     background-color: #4082da;
     box-shadow: 0 0 20px #4082da;
   }
+  
   100% {
     background-color: #79abed;
     box-shadow: 0 0 5px #79abed;
