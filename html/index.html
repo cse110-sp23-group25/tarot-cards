@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Card Game</title>
+  <link rel="icon" type="image/png" href="../assets/logo_blue.png">
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
   <audio id="background-sound" src="../assets/background.wav" loop></audio>
   <audio id="sound" src="../assets/witch_voice.wav"></audio>
@@ -10,6 +11,11 @@
   </video>
 </head>
 <body>
+
+  <div id="button-container">
+    <button id="disp-fort-butt" hidden>See Fortunes</button>
+  </div>
+
   <div class="parent">
     <div class="container pre">
             
@@ -23,10 +29,6 @@
   
     <div class="container post" hidden>
     </div>
-  </div>
-
-  <div id="button-container">
-    <button id="disp-fort-butt" hidden>See Fortunes</button>
   </div>
 
   <script src="../js/main.js" type="module"></script>
