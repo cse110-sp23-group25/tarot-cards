@@ -97,7 +97,6 @@ function init () {
         const selectedCards = myDeck.draw(NUM_CARDS);
         fiveChosenCards = selectedCards;
 
-        console.log(selectedCards);
         let numCardsFlipped = 0;
         const flipped = [false, false, false, false, false];
 
@@ -112,7 +111,6 @@ function init () {
          * @returns N/A
          */
         function flipCard (index) {
-            console.log('card clicked');
             if (flipped[index]) {
                 return;
             }
@@ -136,7 +134,11 @@ function init () {
      */
     function allFlipped () {
         const button = document.getElementById('disp-fort-butt');
-        button.style.display = 'block';
+        // button.style.display = 'block';
+        button.removeAttribute('hidden');
+        button.scrollIntoView({
+            behavior: 'smooth'
+        });
 
         // on click, load the fortunes and display them
         /*
@@ -147,14 +149,23 @@ function init () {
         4 -> middle card (outcome)
         */
         button.addEventListener('click', () => {
-            // clear the cards off the page
-            document.body.innerHTML = '';
 
+            // clear the cards off the page and change background
+            document.getElementById('card-page').style.display = 'none';
+            document.body.style.backgroundImage = "none";
+            document.body.style.backgroundColor = "tan";
             const fortuneList = [];
 
+            // set up receipt
+            document.getElementById('fortune-page').style.backgroundColor = "#f5f0f0";
+            document.getElementById('fortune-page').style.boxShadow = "2px 2px 4px 8px rgba(0, 0, 0, 0.2)";
+
+            document.getElementById('receipt-header').removeAttribute('hidden');
+            document.getElementById('receipt-footer').removeAttribute('hidden');
+
+            // populate the fortuneList array with the proper fortunes
             for (let i = 0; i < 5; i++) {
                 const fortunesOfCard = fiveChosenCards[i].getFortunes();
-                console.log(fortunesOfCard);
                 let fortuneText;
 
                 switch (i) {
@@ -186,28 +197,67 @@ function init () {
                 fortuneList.push(fortuneText);
             }
 
+            // display the fortunes
             for (let i = 0; i < 5; i++) {
-                const p = document.createElement('p');
 
-                // Set the inner text of the paragraph to the fortune
-                p.innerText = fortuneList[i];
+                let cardImageToDisplay;
+                let cardFortuneToDisplay;
+                let cardNameToDisplay;
 
-                // Create an img element for the card image
-                const img = document.createElement('img');
+                switch (i) {
+                // dealing with outcome card
+                case 0:
+                    cardImageToDisplay = document.getElementById('top-card-image');
+                    cardFortuneToDisplay = document.getElementById('top-card-fortune');
+                    cardNameToDisplay = document.getElementById('top-card-name');
+                    break;
 
-                // Set the src attribute of the img element to the image URL
-                img.src = '../assets/card_package/' + fiveChosenCards[i].getImg();
+                // dealing with current situation card
+                case 1:
+                    cardImageToDisplay = document.getElementById('right-card-image');
+                    cardFortuneToDisplay = document.getElementById('right-card-fortune');
+                    cardNameToDisplay = document.getElementById('right-card-name');
+                    break;
 
-                // Create a div to contain the image and the paragraph
-                const div = document.createElement('div');
+                // dealing with challenges card
+                case 2:
+                    cardImageToDisplay = document.getElementById('bottom-card-image');
+                    cardFortuneToDisplay = document.getElementById('bottom-card-fortune');
+                    cardNameToDisplay = document.getElementById('bottom-card-name');
+                    break;
 
-                // Append the image and the paragraph to the div
-                div.appendChild(img);
-                div.appendChild(p);
+                // dealing with what u can change card
+                case 3:
+                    cardImageToDisplay = document.getElementById('left-card-image');
+                    cardFortuneToDisplay = document.getElementById('left-card-fortune');
+                    cardNameToDisplay = document.getElementById('left-card-name');
+                    break;
 
-                // Append the div to the body
-                document.body.appendChild(div);
+                // dealing with response card
+                case 4:
+                    cardImageToDisplay = document.getElementById('middle-card-image');
+                    cardFortuneToDisplay = document.getElementById('middle-card-fortune');
+                    cardNameToDisplay = document.getElementById('middle-card-name');
+                    break;
+                }
+
+                // set image to correct image
+                cardImageToDisplay.src = '../assets/card_package/' + fiveChosenCards[i].getImg();
+
+                // set fortune to correct fortune
+                cardFortuneToDisplay.textContent = fortuneList[i];
+
+                // set quantity and name
+                cardNameToDisplay.textContent = fiveChosenCards[i].getName();
+
+                cardImageToDisplay.removeAttribute('hidden');
+                cardFortuneToDisplay.removeAttribute('hidden');
+                cardNameToDisplay.removeAttribute('hidden');
+                cardImageToDisplay.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
+
         });
     }
     main();

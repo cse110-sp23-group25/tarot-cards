@@ -4,20 +4,13 @@
   <title>Card Game</title>
   <link rel="icon" type="image/png" href="../assets/logo_blue.png">
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
-  <audio id="background-sound" src="../assets/background.wav" loop></audio>
-  <audio id="sound" src="../assets/witch_voice.wav"></audio>
-  <video id="background-video" autoplay loop muted>
-    <source src="../assets/background_video.mp4" type="video/mp4">
-  </video>
+  <audio id="background-sound" src="../assets/background_music.mp3" autoplay loop></audio>
 </head>
 <body>
-
-  <div id="button-container">
-    <button id="disp-fort-butt" hidden>See Fortunes</button>
-  </div>
-
   <div class="parent">
-    <div class="container pre">
+    <div id="card-page" class="container pre">
+
+      <button id="disp-fort-butt" hidden>See Fortunes</button>
             
       <div class="card top"></div>
       <div class="card right"></div>
@@ -27,7 +20,38 @@
       
     </div>
   
-    <div class="container post" hidden>
+    <div id="fortune-page" class="container post">
+
+      <div id="receipt-header" hidden>
+        <h1> #c0ffee Receipt </h1>
+        <p>maybe can put time & date</p>
+      </div>
+
+      <h3 id="top-card-name" hidden></h3>
+      <img id="top-card-image" hidden>
+      <p class="fortunes" id="top-card-fortune" hidden></p>
+
+      <h3 id="right-card-name" hidden></h3>
+      <img id="right-card-image" hidden>
+      <p class="fortunes" id="right-card-fortune" hidden></p>
+
+      <h3 id="bottom-card-name" hidden></h3>
+      <img id="bottom-card-image" hidden>
+      <p class="fortunes" id="bottom-card-fortune" hidden></p>
+
+      <h3 id="left-card-name" hidden></h3>
+      <img id="left-card-image" hidden>
+      <p class="fortunes" id="left-card-fortune" hidden></p>
+
+      <h3 id="middle-card-name" hidden></h3>
+      <img id="middle-card-image" hidden>
+      <p class="fortunes" id="middle-card-fortune" hidden></p>
+
+      <div id="receipt-footer" hidden>
+        <h2>Thanks for visiting us today!</h2>
+        <p>Let us know how we can improve:<br> (opportunity for user analytics)</p>
+      </div>
+
     </div>
   </div>
 

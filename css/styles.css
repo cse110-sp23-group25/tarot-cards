@@ -1,17 +1,21 @@
 * {
-  font-family: Papyrus;
+  font-family: Verdana;
 }
 
 body {
-  background-color: #634f48;
+  background-image: url('../assets/background_photo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #544541;
 }
 
 .parent {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .container.pre {
@@ -27,11 +31,13 @@ body {
 }
 
 .container.post {
+  justify-self: center;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  /* width: 1000px;
-  height: 1500px; */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 5vh;
+  width: 70vw;
+  height: auto;
 
   /* border: 1px dashed #ff0000; */
   grid-column: 1;
@@ -83,46 +89,106 @@ body {
   grid-row: 2;
 }
 
-#button-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  margin: auto;
-}
-
 @keyframes glowing {
   0% {
-    background-color: #c0ffee;
-    box-shadow: 0 0 5px #c0ffee;
+    background-color: #79abed;
+    /* box-shadow: 0 0 5px #79abed; */
   }
   50% {
     background-color: #4082da;
-    box-shadow: 0 0 20px #4082da;
+    /* box-shadow: 0 0 20px #4082da; */
   }
   100% {
-    background-color: #c0ffee;
-    box-shadow: 0 0 5px #c0ffee;
+    background-color: #79abed;
+    /* box-shadow: 0 0 5px #79abed; */
   }
 }
 
 #disp-fort-butt {
   font-size: large;
   grid-column: 3;
-  grid-row: 3;
+  grid-row: 1;
+  justify-self: center;
   color: black;
   padding: 5px 20px;
   border-radius: 10px;
   max-width: 250px;
+  max-height: 50px;
   animation: glowing 3000ms infinite;
 }
 
-#background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  display: none;
+#top-card-image {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#top-card-fortune {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+#right-card-image {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+#right-card-fortune {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+#bottom-card-image {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+#bottom-card-fortune {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+#left-card-image {
+  grid-column: 2;
+  grid-row: 5;
+}
+
+#left-card-fortune {
+  grid-column: 3;
+  grid-row: 5;
+}
+
+#middle-card-image {
+  grid-column: 2;
+  grid-row: 6;
+}
+
+#middle-card-fortune {
+  grid-column: 3;
+  grid-row: 6;
+}
+
+.fortunes {
+  color: black;
+  padding-right: 5vw;
+  padding-top: 10vh;
+}
+
+#receipt-header {
+  padding-top: 5vh;
+  grid-column-start: span 3;
+  justify-self: center;
+}
+
+#receipt-footer {
+  grid-row: 7;
+  grid-column-start: span 3;
+  justify-self: center;
+}
+
+#receipt-footer *, #receipt-header *{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#top-card-name, #right-card-name, #bottom-card-name, #left-card-name, #middle-card-name {
+  justify-self: center;
 }
