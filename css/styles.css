@@ -1,17 +1,25 @@
-.parent {
+* {
+  font-family:'Papyrus';
+}
+
+body {
+  background-color: tan;
+}
+
+/* .parent {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   width: 10px;
   height: 10px;
-}
+} */
 
 .container.pre {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  width: 1000px;
-  height: 1000px;
+  max-width: 1000px;
+  max-height: 1000px;
   margin: auto;
 
   /* border: 1px dashed #ff0000; */
@@ -34,6 +42,7 @@
 }
 
 .card {
+  justify-self: center;
   width: 200px;
   height: 300px;
   background-image: url("../assets/start.png");
@@ -48,7 +57,7 @@
 }
 
 .card-flip {
-  transform: rotateY(180deg);
+  transform: rotateY(360deg);
 }
 
 .card.middle {
@@ -74,6 +83,39 @@
 .card.right {
   grid-column: 3;
   grid-row: 2;
+}
+
+/*
+can change the color it glows, but for now this is a potential option we could consider
+for button stylilng
+*/
+#disp-fort-butt {
+  position: fixed;
+  bottom: 0;
+  min-width: 70vw;
+  text-align: center;
+  justify-self: center;
+  background-color: #2ba805;
+  border-radius: 60px;
+}
+
+@keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+  50% {
+    background-color: #49e819;
+    box-shadow: 0 0 20px #49e819;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 5px #2ba805;
+  }
+}
+
+#disp-fort-butt {
+  animation: glowing 1300ms infinite;
 }
 
 #background-video {
