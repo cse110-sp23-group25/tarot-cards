@@ -186,3 +186,17 @@ test('Background image stay the same when clicking twice', () => {
     cardElement.click();
     expect(cardElement.style.backgroundImage).toBe("url(new_image1.png)");
 });
+
+// check if the background image change when click 3 times(it should not change)
+test('Background image stay the same when clicking twice', () => {
+    const cardElement = document.createElement('div');
+    cardElement.setAttribute('class', 'card');
+    cardElement.style.backgroundImage = 'url("old_image2.png")';
+    cardElement.addEventListener('click', () => {
+        cardElement.style.backgroundImage = 'url("new_image2.png")';
+    });
+    cardElement.click();
+    cardElement.click();
+    cardElement.click();
+    expect(cardElement.style.backgroundImage).toBe("url(new_image2.png)");
+});
