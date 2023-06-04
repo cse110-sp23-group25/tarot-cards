@@ -1,4 +1,48 @@
-window.addEventListener('DOMContentLoaded', init);
+window.onload = function() {
+    const welcomeButton = document.getElementById('start-button');
+    welcomeButton.addEventListener('click', () => {
+        let welcomePage = document.getElementById('welcome-page');
+        welcomePage.classList.add('fade-out');
+        setTimeout(function() {
+            welcomePage.style.display = 'none';
+            // When welcome button is clicked, go to the Tarot Cards
+            shuffleCards();
+            init();
+        }, 2000);
+    });
+}
+
+
+/**
+This function shuffles the cards and animates them to their respective positions on the grid
+@returns N/A
+*/
+function shuffleCards() {
+    const animations = [
+        { name: 'card0Animation', gridRow: 1, gridColumn: 2 }, // top
+        { name: 'card1Animation', gridRow: 2, gridColumn: 3 }, // right
+        { name: 'card2Animation', gridRow: 3, gridColumn: 2 }, // bottom
+        { name: 'card3Animation', gridRow: 2, gridColumn: 1 }, // left
+        { name: 'card4Animation', gridRow: 2, gridColumn: 2 }  // middle
+    ];
+
+    for (let i = 0; i < 5; i++) {
+        let card = document.getElementById(`card${i}`);
+        card.style.gridColumn = 2; // Initially set all cards to the center of the grid.
+        card.style.gridRow = 2;
+        card.removeAttribute('hidden');
+    }
+
+    let cards = document.querySelectorAll('.card');
+    for(let i = 0; i < cards.length; i++) {
+        let delay = i * 1; // 1 second delay for each card.
+        setTimeout(() => {
+            cards[i].style.animation = `2s ease-out 0s forwards ${animations[i].name}, 0.5s linear 2s forwards flip`;
+            cards[i].style.zIndex = `${5 - i}`;
+            cards[i].classList.remove('deck');
+        }, delay * 1000); // convert delay to milliseconds.
+    }
+  }
 
 /**
  * @class
@@ -143,7 +187,6 @@ function init () {
         const selectedCards = myDeck.draw(NUM_CARDS);
         fiveChosenCards = selectedCards;
 
-        console.log(selectedCards);
         let numCardsFlipped = 0;
         const flipped = [false, false, false, false, false];
 
@@ -160,7 +203,6 @@ function init () {
          * @version 0.1
          */
         function flipCard (index) {
-            console.log('card clicked');
             if (flipped[index]) {
                 return;
             }
@@ -169,6 +211,10 @@ function init () {
             currentCard.style.backgroundImage = `url(../assets/card_package/${selectedCards[index].img})`;
             numCardsFlipped++;
             currentCard.classList.toggle('card-flip');
+
+            currentCard.scrollIntoView({
+                behavior: 'smooth'
+            });
 
             flipped[index] = true;
             if (numCardsFlipped === 5) {
@@ -186,8 +232,21 @@ function init () {
      * @version 0.1
      */
     function allFlipped () {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card) => {
+            card.classList.add('fade-out-cards');
+        });
+
         const button = document.getElementById('disp-fort-butt');
-        button.style.display = 'block';
+        setTimeout(() => {
+            // button.style.display = 'block';
+            cards.forEach((card) => {
+                card.removeEventListener('click', () => flipCard(i));
+                card.style.cursor = 'default';
+            });
+            button.removeAttribute('hidden');
+        }, 5000);
+
 
         // on click, load the fortunes and display them
         /*
@@ -198,14 +257,23 @@ function init () {
         4 -> middle card (outcome)
         */
         button.addEventListener('click', () => {
-            // clear the cards off the page
-            document.body.innerHTML = '';
 
+            // clear the cards off the page and change background
+            document.getElementById('card-page').style.display = 'none';
+            document.body.style.backgroundImage = "none";
+            document.body.style.backgroundColor = "tan";
             const fortuneList = [];
 
+            // set up receipt
+            document.getElementById('fortune-page').style.backgroundColor = "#f5f0f0";
+            document.getElementById('fortune-page').style.boxShadow = "2px 2px 4px 8px rgba(0, 0, 0, 0.2)";
+
+            document.getElementById('receipt-header').removeAttribute('hidden');
+            document.getElementById('receipt-footer').removeAttribute('hidden');
+
+            // populate the fortuneList array with the proper fortunes
             for (let i = 0; i < 5; i++) {
                 const fortunesOfCard = fiveChosenCards[i].getFortunes();
-                console.log(fortunesOfCard);
                 let fortuneText;
 
                 switch (i) {
@@ -237,28 +305,67 @@ function init () {
                 fortuneList.push(fortuneText);
             }
 
+            // display the fortunes
             for (let i = 0; i < 5; i++) {
-                const p = document.createElement('p');
 
-                // Set the inner text of the paragraph to the fortune
-                p.innerText = fortuneList[i];
+                let cardImageToDisplay;
+                let cardFortuneToDisplay;
+                let cardNameToDisplay;
 
-                // Create an img element for the card image
-                const img = document.createElement('img');
+                switch (i) {
+                // dealing with outcome card
+                case 0:
+                    cardImageToDisplay = document.getElementById('top-card-image');
+                    cardFortuneToDisplay = document.getElementById('top-card-fortune');
+                    cardNameToDisplay = document.getElementById('top-card-name');
+                    break;
 
-                // Set the src attribute of the img element to the image URL
-                img.src = '../assets/card_package/' + fiveChosenCards[i].getImg();
+                // dealing with current situation card
+                case 1:
+                    cardImageToDisplay = document.getElementById('right-card-image');
+                    cardFortuneToDisplay = document.getElementById('right-card-fortune');
+                    cardNameToDisplay = document.getElementById('right-card-name');
+                    break;
 
-                // Create a div to contain the image and the paragraph
-                const div = document.createElement('div');
+                // dealing with challenges card
+                case 2:
+                    cardImageToDisplay = document.getElementById('bottom-card-image');
+                    cardFortuneToDisplay = document.getElementById('bottom-card-fortune');
+                    cardNameToDisplay = document.getElementById('bottom-card-name');
+                    break;
 
-                // Append the image and the paragraph to the div
-                div.appendChild(img);
-                div.appendChild(p);
+                // dealing with what u can change card
+                case 3:
+                    cardImageToDisplay = document.getElementById('left-card-image');
+                    cardFortuneToDisplay = document.getElementById('left-card-fortune');
+                    cardNameToDisplay = document.getElementById('left-card-name');
+                    break;
 
-                // Append the div to the body
-                document.body.appendChild(div);
+                // dealing with response card
+                case 4:
+                    cardImageToDisplay = document.getElementById('middle-card-image');
+                    cardFortuneToDisplay = document.getElementById('middle-card-fortune');
+                    cardNameToDisplay = document.getElementById('middle-card-name');
+                    break;
+                }
+
+                // set image to correct image
+                cardImageToDisplay.src = '../assets/card_package/' + fiveChosenCards[i].getImg();
+
+                // set fortune to correct fortune
+                cardFortuneToDisplay.textContent = fortuneList[i];
+
+                // set quantity and name
+                cardNameToDisplay.textContent = fiveChosenCards[i].getName();
+
+                cardImageToDisplay.removeAttribute('hidden');
+                cardFortuneToDisplay.removeAttribute('hidden');
+                cardNameToDisplay.removeAttribute('hidden');
+                cardImageToDisplay.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
+
         });
     }
     main();
