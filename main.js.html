@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Card.html">Card</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Deck.html">Deck</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#allFlipped">allFlipped</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Draw">Draw</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#flipCard">flipCard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateDeck">generateDeck</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getFortunes">getFortunes</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getImg">getImg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getName">getName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#main">main</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Card.html">Card</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Card.html#getFortunes">getFortunes</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Card.html#getImg">getImg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Card.html#getName">getName</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Deck.html">Deck</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Deck.html#draw">draw</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Deck.html#generateDeck">generateDeck</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#shuffleCards">shuffleCards</a></span></li>
 </nav>
 
 <div id="main">
@@ -39,24 +39,57 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>window.addEventListener('DOMContentLoaded', init);
+            <pre class="prettyprint source linenums"><code>window.onload = function() {
+    const welcomeButton = document.getElementById('start-button');
+    welcomeButton.addEventListener('click', () => {
+        let welcomePage = document.getElementById('welcome-page');
+        welcomePage.classList.add('fade-out');
+        setTimeout(function() {
+            welcomePage.style.display = 'none';
+            // When welcome button is clicked, go to the Tarot Cards
+            shuffleCards();
+            init();
+        }, 2000);
+    });
+}
+
 
 /**
- * @class
- * @name Card
- * @description This class is to represent a tarot card object. Each card will a name, 5
- * associated fortunes, and an image.
- * @version 0.1
+This function shuffles the cards and animates them to their respective positions on the grid
+@returns N/A
+*/
+function shuffleCards() {
+    const animations = [
+        { name: 'card0Animation', gridRow: 1, gridColumn: 2 }, // top
+        { name: 'card1Animation', gridRow: 2, gridColumn: 3 }, // right
+        { name: 'card2Animation', gridRow: 3, gridColumn: 2 }, // bottom
+        { name: 'card3Animation', gridRow: 2, gridColumn: 1 }, // left
+        { name: 'card4Animation', gridRow: 2, gridColumn: 2 }  // middle
+    ];
+
+    for (let i = 0; i &lt; 5; i++) {
+        let card = document.getElementById(`card${i}`);
+        card.style.gridColumn = 2; // Initially set all cards to the center of the grid.
+        card.style.gridRow = 2;
+        card.removeAttribute('hidden');
+    }
+
+    let cards = document.querySelectorAll('.card');
+    for(let i = 0; i &lt; cards.length; i++) {
+        let delay = i * 1; // 1 second delay for each card.
+        setTimeout(() => {
+            cards[i].style.animation = `2s ease-out 0s forwards ${animations[i].name}, 0.5s linear 2s forwards flip`;
+            cards[i].style.zIndex = `${5 - i}`;
+            cards[i].classList.remove('deck');
+        }, delay * 1000); // convert delay to milliseconds.
+    }
+  }
+
+/**
+ * This class is to represent a tarot card object. Each card will a name, 5
+ * associated fortunes, and an image. 
  */
 class Card {
-
-    /**
-     * @constructor
-     * @param {string} name name of card
-     * @param {string[]} fortunes 5 fortunes of the card
-     * @param {string} img local path to card image
-     * @version 0.1
-     */
     constructor (name, fortunes, img) {
         this.name = name;
         this.fortunes = fortunes;
@@ -64,32 +97,23 @@ class Card {
     }
 
     /**
-     * @function
-     * @name getName
-     * @description This method is a getter for the Card's assigned name.
+     * This method is a getter for the Card's assigned name.
      * @returns the name of the Card
-     * @version 0.1
      */
     getName() {
         return this.name;
     }
     /**
-     * @function
-     * @name getFortunes
-     * @description This method is a getter for the Card's fortunes.
+     * This method is a getter for the Card's fortunes.
      * @returns an array of 5 fortunes
-     * @version 0.1
      */
     getFortunes () {
         return this.fortunes;
     }
 
     /**
-     * @function
-     * @name getImg
-     * @description This method is a getter for the Card's image.
-     * @returns the local path of the Card's image
-     * @version 0.1
+     * This method is a getter for the Card's image.
+     * @returns the path/name of the Card's image
      */
     getImg () {
         return this.img;
@@ -97,32 +121,20 @@ class Card {
 }
 
 /**
- * @class
- * @name Deck
- * @description This class is to represent the chosen deck of Tarot card. The deck will
+ * This class is to represent the chosen deck of Tarot card. The deck will
  * have an array which holds Card objects.
- * @version 0.1
  */
 class Deck {
-
-    /**
-     * @constructor
-     * @param {string} path path to JSON file containing deck details
-     * @version 0.1
-     */
     constructor (path) {
         this.path = path;
         this.cards = [];
     }
 
     /**
-     * @function
-     * @name Draw
-     * @description This method randomly selects a number of cards out of the Deck. This simulates
+     * This method randomly selects a number of cards out of the Deck. This simulates
      * the user being randomly dealt a number of  tarot cards.
-     * @param {integer} num Number of cards to be dealt out
+     * @param num Number of cards to be dealt out
      * @returns An array of the selected cards
-     * @version 0.1
      */
     draw (num) {
         const returnCards = [];
@@ -137,13 +149,11 @@ class Deck {
     }
 
     /**
-     * @function
-     * @name generateDeck
-     * @description This function fills the Deck with the proper cards according to which Deck
+     * This function fills the Deck with the proper cards according to which Deck
      * the user has chosen.
-     * @param {string} path The file path to the JSON file containing deck information
-     * @param {Deck} deckObj The Deck object that will be filled with cards
-     * @version 0.1
+     * @param path The file path to the JSON file containing deck information
+     * @param deckObj The Deck object that will be filled with cards
+     * @returns N/A
      */
     async generateDeck () {
         const response = await fetch(this.path);
@@ -156,26 +166,14 @@ class Deck {
     }
 }
 
-/**
- * @function 
- * @name init
- * @description This function is to ensure that the DOM is entirely loaded before the rest of the code is called.
- * As such, it contains nested functions and much of the logic required for the application.
- * @version 0.1
- * 
- */
 function init () {
     const NUM_CARDS = 5;
     const PATH = '../assets/card_package/fortunes.json';
     let fiveChosenCards = [];
 
     /**
-     * @function
-     * @name main
-     * @async
-     * @description This function handles everything that happens after the Deck has been
+     * This function handles everything that happens after the Deck has been
      * chosen and generated.
-     * @version 0.1
      */
     async function main () {
         const myDeck = new Deck(PATH);
@@ -184,7 +182,6 @@ function init () {
         const selectedCards = myDeck.draw(NUM_CARDS);
         fiveChosenCards = selectedCards;
 
-        console.log(selectedCards);
         let numCardsFlipped = 0;
         const flipped = [false, false, false, false, false];
 
@@ -194,14 +191,11 @@ function init () {
         }
 
         /**
-         * @function
-         * @name flipCard
-         * @description Contains the animation to flip the card to its face
-         * @param {integer} index The index of the card to be flipped from the `flipped` array
-         * @version 0.1
+         * This function flips a card
+         * @param index The index of the card to be flipped from the `flipped` array
+         * @returns N/A
          */
         function flipCard (index) {
-            console.log('card clicked');
             if (flipped[index]) {
                 return;
             }
@@ -211,6 +205,10 @@ function init () {
             numCardsFlipped++;
             currentCard.classList.toggle('card-flip');
 
+            currentCard.scrollIntoView({
+                behavior: 'smooth'
+            });
+
             flipped[index] = true;
             if (numCardsFlipped === 5) {
                 allFlipped();
@@ -219,16 +217,26 @@ function init () {
     }
 
     /**
-     * @function
-     * @name allFlipped
-     * @description This function is to present a button once the user has flipped all 5
+     * This function is to present a button once the user has flipped all 5
      * cards. When the button is clicked, the proper fortunes will be
      * presented.
-     * @version 0.1
      */
     function allFlipped () {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card) => {
+            card.classList.add('fade-out-cards');
+        });
+
         const button = document.getElementById('disp-fort-butt');
-        button.style.display = 'block';
+        setTimeout(() => {
+            // button.style.display = 'block';
+            cards.forEach((card) => {
+                card.removeEventListener('click', () => flipCard(i));
+                card.style.cursor = 'default';
+            });
+            button.removeAttribute('hidden');
+        }, 5000);
+
 
         // on click, load the fortunes and display them
         /*
@@ -239,14 +247,23 @@ function init () {
         4 -> middle card (outcome)
         */
         button.addEventListener('click', () => {
-            // clear the cards off the page
-            document.body.innerHTML = '';
 
+            // clear the cards off the page and change background
+            document.getElementById('card-page').style.display = 'none';
+            document.body.style.backgroundImage = "none";
+            document.body.style.backgroundColor = "tan";
             const fortuneList = [];
 
+            // set up receipt
+            document.getElementById('fortune-page').style.backgroundColor = "#f5f0f0";
+            document.getElementById('fortune-page').style.boxShadow = "2px 2px 4px 8px rgba(0, 0, 0, 0.2)";
+
+            document.getElementById('receipt-header').removeAttribute('hidden');
+            document.getElementById('receipt-footer').removeAttribute('hidden');
+
+            // populate the fortuneList array with the proper fortunes
             for (let i = 0; i &lt; 5; i++) {
                 const fortunesOfCard = fiveChosenCards[i].getFortunes();
-                console.log(fortunesOfCard);
                 let fortuneText;
 
                 switch (i) {
@@ -278,28 +295,67 @@ function init () {
                 fortuneList.push(fortuneText);
             }
 
+            // display the fortunes
             for (let i = 0; i &lt; 5; i++) {
-                const p = document.createElement('p');
 
-                // Set the inner text of the paragraph to the fortune
-                p.innerText = fortuneList[i];
+                let cardImageToDisplay;
+                let cardFortuneToDisplay;
+                let cardNameToDisplay;
 
-                // Create an img element for the card image
-                const img = document.createElement('img');
+                switch (i) {
+                // dealing with outcome card
+                case 0:
+                    cardImageToDisplay = document.getElementById('top-card-image');
+                    cardFortuneToDisplay = document.getElementById('top-card-fortune');
+                    cardNameToDisplay = document.getElementById('top-card-name');
+                    break;
 
-                // Set the src attribute of the img element to the image URL
-                img.src = '../assets/card_package/' + fiveChosenCards[i].getImg();
+                // dealing with current situation card
+                case 1:
+                    cardImageToDisplay = document.getElementById('right-card-image');
+                    cardFortuneToDisplay = document.getElementById('right-card-fortune');
+                    cardNameToDisplay = document.getElementById('right-card-name');
+                    break;
 
-                // Create a div to contain the image and the paragraph
-                const div = document.createElement('div');
+                // dealing with challenges card
+                case 2:
+                    cardImageToDisplay = document.getElementById('bottom-card-image');
+                    cardFortuneToDisplay = document.getElementById('bottom-card-fortune');
+                    cardNameToDisplay = document.getElementById('bottom-card-name');
+                    break;
 
-                // Append the image and the paragraph to the div
-                div.appendChild(img);
-                div.appendChild(p);
+                // dealing with what u can change card
+                case 3:
+                    cardImageToDisplay = document.getElementById('left-card-image');
+                    cardFortuneToDisplay = document.getElementById('left-card-fortune');
+                    cardNameToDisplay = document.getElementById('left-card-name');
+                    break;
 
-                // Append the div to the body
-                document.body.appendChild(div);
+                // dealing with response card
+                case 4:
+                    cardImageToDisplay = document.getElementById('middle-card-image');
+                    cardFortuneToDisplay = document.getElementById('middle-card-fortune');
+                    cardNameToDisplay = document.getElementById('middle-card-name');
+                    break;
+                }
+
+                // set image to correct image
+                cardImageToDisplay.src = '../assets/card_package/' + fiveChosenCards[i].getImg();
+
+                // set fortune to correct fortune
+                cardFortuneToDisplay.textContent = fortuneList[i];
+
+                // set quantity and name
+                cardNameToDisplay.textContent = fiveChosenCards[i].getName();
+
+                cardImageToDisplay.removeAttribute('hidden');
+                cardFortuneToDisplay.removeAttribute('hidden');
+                cardNameToDisplay.removeAttribute('hidden');
+                cardImageToDisplay.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
+
         });
     }
     main();
@@ -317,7 +373,7 @@ module.exports = {Card, Deck};</code></pre>
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Jun 04 2023 07:05:01 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Jun 04 2023 17:51:57 GMT+0000 (Coordinated Universal Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
