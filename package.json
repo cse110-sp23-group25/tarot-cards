@@ -22,8 +22,6 @@
 
     "scripts": {
 
-        "build": "babel ./js/main.js -d lib",
-
         "test": "jest"
 
     },
@@ -37,4 +35,3 @@
     }
 
 }
-
