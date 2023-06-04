@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const functions = require('../js/main.js');
+const functions = require('..src//js/main.js');
 
 test('Successful card generation with valid parameters', () => {
     let validCard = true;
@@ -18,7 +18,7 @@ test('Successful card generation with valid parameters', () => {
 
 
 // // Import the functions to be tested
-const { Card, Deck} = require('../js/main.js');
+const { Card, Deck} = require('../src/js/main.js');
 
 // Test the Card class
 describe('Card', () => {
@@ -55,7 +55,7 @@ describe('Card', () => {
 
 // Test the Deck class
 describe('Deck', () => {
-    const path = '../assets/card_package/fortunes.json';
+    const path = '../src/assets/card_package/fortunes.json';
     const deck = new Deck(path);
     const mockCards = [
         new Card('Card 1', ['fortune1', 'fortune2'], 'image1.png'),
