@@ -2,6 +2,8 @@
 
     "devDependencies": {
 
+        "@babel/cli": "^7.21.5",
+
         "@babel/core": "^7.22.1",
 
         "@babel/preset-env": "^7.22.4",
@@ -17,9 +19,7 @@
     },
 
     "scripts": {
-
-        "build": "babel src -d lib",
-
+        "build": "babel ./js/main.js -d lib",
         "test": "jest"
 
     },

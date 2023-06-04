@@ -45,10 +45,21 @@ function shuffleCards() {
   }
 
 /**
- * This class is to represent a tarot card object. Each card will a name, 5
- * associated fortunes, and an image. 
+ * @class
+ * @name Card
+ * @description This class is to represent a tarot card object. Each card will a name, 5
+ * associated fortunes, and an image.
+ * @version 0.1
  */
 class Card {
+
+    /**
+     * @constructor
+     * @param {string} name name of card
+     * @param {string[]} fortunes 5 fortunes of the card
+     * @param {string} img local path to card image
+     * @version 0.1
+     */
     constructor (name, fortunes, img) {
         this.name = name;
         this.fortunes = fortunes;
@@ -56,23 +67,32 @@ class Card {
     }
 
     /**
-     * This method is a getter for the Card's assigned name.
+     * @function
+     * @name getName
+     * @description This method is a getter for the Card's assigned name.
      * @returns the name of the Card
+     * @version 0.1
      */
     getName() {
         return this.name;
     }
     /**
-     * This method is a getter for the Card's fortunes.
+     * @function
+     * @name getFortunes
+     * @description This method is a getter for the Card's fortunes.
      * @returns an array of 5 fortunes
+     * @version 0.1
      */
     getFortunes () {
         return this.fortunes;
     }
 
     /**
-     * This method is a getter for the Card's image.
-     * @returns the path/name of the Card's image
+     * @function
+     * @name getImg
+     * @description This method is a getter for the Card's image.
+     * @returns the local path of the Card's image
+     * @version 0.1
      */
     getImg () {
         return this.img;
@@ -80,20 +100,32 @@ class Card {
 }
 
 /**
- * This class is to represent the chosen deck of Tarot card. The deck will
+ * @class
+ * @name Deck
+ * @description This class is to represent the chosen deck of Tarot card. The deck will
  * have an array which holds Card objects.
+ * @version 0.1
  */
 class Deck {
+
+    /**
+     * @constructor
+     * @param {string} path path to JSON file containing deck details
+     * @version 0.1
+     */
     constructor (path) {
         this.path = path;
         this.cards = [];
     }
 
     /**
-     * This method randomly selects a number of cards out of the Deck. This simulates
+     * @function
+     * @name Draw
+     * @description This method randomly selects a number of cards out of the Deck. This simulates
      * the user being randomly dealt a number of  tarot cards.
-     * @param num Number of cards to be dealt out
+     * @param {integer} num Number of cards to be dealt out
      * @returns An array of the selected cards
+     * @version 0.1
      */
     draw (num) {
         const returnCards = [];
@@ -108,11 +140,13 @@ class Deck {
     }
 
     /**
-     * This function fills the Deck with the proper cards according to which Deck
+     * @function
+     * @name generateDeck
+     * @description This function fills the Deck with the proper cards according to which Deck
      * the user has chosen.
-     * @param path The file path to the JSON file containing deck information
-     * @param deckObj The Deck object that will be filled with cards
-     * @returns N/A
+     * @param {string} path The file path to the JSON file containing deck information
+     * @param {Deck} deckObj The Deck object that will be filled with cards
+     * @version 0.1
      */
     async generateDeck () {
         const response = await fetch(this.path);
@@ -125,14 +159,26 @@ class Deck {
     }
 }
 
+/**
+ * @function 
+ * @name init
+ * @description This function is to ensure that the DOM is entirely loaded before the rest of the code is called.
+ * As such, it contains nested functions and much of the logic required for the application.
+ * @version 0.1
+ * 
+ */
 function init () {
     const NUM_CARDS = 5;
     const PATH = '../assets/card_package/fortunes.json';
     let fiveChosenCards = [];
 
     /**
-     * This function handles everything that happens after the Deck has been
+     * @function
+     * @name main
+     * @async
+     * @description This function handles everything that happens after the Deck has been
      * chosen and generated.
+     * @version 0.1
      */
     async function main () {
         const myDeck = new Deck(PATH);
@@ -150,9 +196,11 @@ function init () {
         }
 
         /**
-         * This function flips a card
-         * @param index The index of the card to be flipped from the `flipped` array
-         * @returns N/A
+         * @function
+         * @name flipCard
+         * @description Contains the animation to flip the card to its face
+         * @param {integer} index The index of the card to be flipped from the `flipped` array
+         * @version 0.1
          */
         function flipCard (index) {
             if (flipped[index]) {
@@ -176,9 +224,12 @@ function init () {
     }
 
     /**
-     * This function is to present a button once the user has flipped all 5
+     * @function
+     * @name allFlipped
+     * @description This function is to present a button once the user has flipped all 5
      * cards. When the button is clicked, the proper fortunes will be
      * presented.
+     * @version 0.1
      */
     function allFlipped () {
         const cards = document.querySelectorAll('.card');
