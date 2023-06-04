@@ -20,8 +20,8 @@
 
     "scripts": {
         "build": "babel src -d lib",
-        "test": "jest"
-
+        "test": "jest",
+        "start": "node ./src/js/main.js"
     },
 
     "dependencies": {
