@@ -143,36 +143,36 @@ test('Number of elements with the .card class', () => {
 });
 
 // // Mock the Audio elements used in the main.js file
-// window.HTMLMediaElement.prototype.play = jest.fn();
+window.HTMLMediaElement.prototype.play = jest.fn();
 
-// // Create a mock function for the audio click sound
-// const mockAudioClick = jest.fn();
+// Create a mock function for the audio click sound
+const mockAudioClick = jest.fn();
 
-// // Mock the getElementById function to return the mock audio click element
-// document.getElementById = jest.fn().mockImplementation((id) => {
-//     if (id === 'sound') {
-//         return {
-//             play: mockAudioClick,
-//         };
-//     }
-// });
-// //check if the background image change when click
-// test('Background image changes when a card is clicked', () => {
-//     // Create a new DOM element to represent the card
-//     const cardElement = document.createElement('div');
-//     cardElement.setAttribute('class', 'card');
-//     cardElement.style.backgroundImage = 'url("old_image.png")';
+// Mock the getElementById function to return the mock audio click element
+document.getElementById = jest.fn().mockImplementation((id) => {
+    if (id === 'sound') {
+        return {
+            play: mockAudioClick,
+        };
+    }
+});
+//check if the background image change when click
+test('Background image changes when a card is clicked', () => {
+    // Create a new DOM element to represent the card
+    const cardElement = document.createElement('div');
+    cardElement.setAttribute('class', 'card');
+    cardElement.style.backgroundImage = 'url("old_image.png")';
 
-//     // Add the click event listener to the card element
-//     cardElement.addEventListener('click', () => {
-//         cardElement.style.backgroundImage = 'url("new_image.png")';
-//     });
+    // Add the click event listener to the card element
+    cardElement.addEventListener('click', () => {
+        cardElement.style.backgroundImage = 'url("new_image.png")';
+    });
 
-//     // Trigger the click event on the card element
-//     cardElement.click();
-//     // Check if the background image has changed
-//     expect(cardElement.style.backgroundImage).toBe("url(new_image.png)");
-// });
+    // Trigger the click event on the card element
+    cardElement.click();
+    // Check if the background image has changed
+    expect(cardElement.style.backgroundImage).toBe("url(new_image.png)");
+});
 
 //check if the background image change when click twice(it should not change)
 // test('Background image stay the same when clicking twice', () => {
