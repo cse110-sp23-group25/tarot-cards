@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Card.html">Card</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Card.html#getFortunes">getFortunes</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Card.html#getImg">getImg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Card.html#getName">getName</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Deck.html">Deck</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Deck.html#draw">draw</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Deck.html#generateDeck">generateDeck</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Card.html">Card</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Deck.html">Deck</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#allFlipped">allFlipped</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Draw">Draw</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#flipCard">flipCard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateDeck">generateDeck</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getFortunes">getFortunes</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getImg">getImg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getName">getName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#main">main</a></span></li>
 </nav>
 
 <div id="main">
@@ -45,9 +45,6 @@
         Card
         </h2>
         
-            <div class="class-description">This class is to represent a tarot card object. Each card will a name, 5
-associated fortunes, and an image.</div>
-        
     
 </header>
 
@@ -58,8 +55,6 @@ associated fortunes, and an image.</div>
 <div class="section-method">
 
     
-    <h2>Constructor</h2>
-    
 
     <h4 class="name" id="Card"><span class="type-signature"></span>new Card<span class="signature">()</span><span class="type-signature"></span></h4>
 
@@ -67,12 +62,20 @@ associated fortunes, and an image.</div>
 
 
 
+<div class="description">
+    This class is to represent a tarot card object. Each card will a name, 5
+associated fortunes, and an image.
+</div>
+
 
 
 
 
 <dl class="details">
 
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.1</li></ul></dd>
     
 
     
@@ -100,7 +103,7 @@ associated fortunes, and an image.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line7">line 7</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line3">line 3</a>
     </li></ul></dd>
     
 
@@ -150,23 +153,44 @@ associated fortunes, and an image.</div>
     
 
     
-        <h3 class="subsection-title">Methods</h3>
 
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        Card
+        </h2>
         
-            
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
 <div class="section-method">
 
     
 
-    <h4 class="name" id="getFortunes"><span class="type-signature"></span>getFortunes<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Card"><span class="type-signature"></span>new Card<span class="signature">(name, fortunes, img)</span><span class="type-signature"></span></h4>
 
     
 
 
-
-<div class="description">
-    This method is a getter for the Card's fortunes.
-</div>
 
 
 
@@ -174,6 +198,9 @@ associated fortunes, and an image.</div>
 
 <dl class="details">
 
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.1</li></ul></dd>
     
 
     
@@ -201,7 +228,7 @@ associated fortunes, and an image.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line25">line 25</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line19">line 19</a>
     </li></ul></dd>
     
 
@@ -220,189 +247,108 @@ associated fortunes, and an image.</div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
-
-
-<div class="param-desc">
-    an array of 5 fortunes
-</div>
-
+    <h5>Parameters:</h5>
     
-</div>
 
-
-
-</div>
+<table class="params">
+    <thead>
+    <tr>
         
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
             
-<div class="section-method">
-
-    
-
-    <h4 class="name" id="getImg"><span class="type-signature"></span>getImg<span class="signature">()</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    This method is a getter for the Card's image.
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line33">line 33</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
-
-
-<div class="param-desc">
-    the path/name of the Card's image
-</div>
-
-    
-</div>
-
-
-
-</div>
-        
+                <td class="name"><code>name</code></td>
             
-<div class="section-method">
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                name of card
+                
+            </td>
+        </tr>
 
     
 
-    <h4 class="name" id="getName"><span class="type-signature"></span>getName<span class="signature">()</span><span class="type-signature"></span></h4>
+        <tr>
+            
+                <td class="name"><code>fortunes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Array.&lt;string></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                5 fortunes of the card
+                
+            </td>
+        </tr>
 
     
 
+        <tr>
+            
+                <td class="name"><code>img</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>string</code></span>
 
 
-<div class="description">
-    This method is a getter for the Card's assigned name.
-</div>
+            
+            </td>
 
+            
 
+            
 
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
+            <td class="description last">
+                local path to card image
+                
+            </td>
+        </tr>
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line18">line 18</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
+    </tbody>
+</table>
 
 
 
@@ -416,31 +362,25 @@ associated fortunes, and an image.</div>
 
 
 
-
-
-
-
-
-
-
-
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
-
-
-<div class="param-desc">
-    the name of the Card
-</div>
-
-    
-</div>
 
 
 
 </div>
-        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
     
 
     
@@ -458,7 +398,7 @@ associated fortunes, and an image.</div>
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Jun 04 2023 05:47:09 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Jun 04 2023 07:05:01 GMT+0000 (Coordinated Universal Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

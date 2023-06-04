@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Card.html">Card</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Card.html#getFortunes">getFortunes</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Card.html#getImg">getImg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Card.html#getName">getName</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Deck.html">Deck</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Deck.html#draw">draw</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="Deck.html#generateDeck">generateDeck</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Card.html">Card</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Deck.html">Deck</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#allFlipped">allFlipped</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Draw">Draw</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#flipCard">flipCard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateDeck">generateDeck</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getFortunes">getFortunes</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getImg">getImg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getName">getName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#main">main</a></span></li>
 </nav>
 
 <div id="main">
@@ -45,9 +45,6 @@
         Deck
         </h2>
         
-            <div class="class-description">This class is to represent the chosen deck of Tarot card. The deck will
-have an array which holds Card objects.</div>
-        
     
 </header>
 
@@ -58,8 +55,6 @@ have an array which holds Card objects.</div>
 <div class="section-method">
 
     
-    <h2>Constructor</h2>
-    
 
     <h4 class="name" id="Deck"><span class="type-signature"></span>new Deck<span class="signature">()</span><span class="type-signature"></span></h4>
 
@@ -67,12 +62,20 @@ have an array which holds Card objects.</div>
 
 
 
+<div class="description">
+    This class is to represent the chosen deck of Tarot card. The deck will
+have an array which holds Card objects.
+</div>
+
 
 
 
 
 <dl class="details">
 
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.1</li></ul></dd>
     
 
     
@@ -100,7 +103,7 @@ have an array which holds Card objects.</div>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line42">line 42</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line58">line 58</a>
     </li></ul></dd>
     
 
@@ -150,24 +153,44 @@ have an array which holds Card objects.</div>
     
 
     
-        <h3 class="subsection-title">Methods</h3>
 
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        Deck
+        </h2>
         
-            
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
 <div class="section-method">
 
     
 
-    <h4 class="name" id="draw"><span class="type-signature"></span>draw<span class="signature">(num)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Deck"><span class="type-signature"></span>new Deck<span class="signature">(path)</span><span class="type-signature"></span></h4>
 
     
 
 
-
-<div class="description">
-    This method randomly selects a number of cards out of the Deck. This simulates
-the user being randomly dealt a number of  tarot cards.
-</div>
 
 
 
@@ -175,6 +198,9 @@ the user being randomly dealt a number of  tarot cards.
 
 <dl class="details">
 
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.1</li></ul></dd>
     
 
     
@@ -202,151 +228,7 @@ the user being randomly dealt a number of  tarot cards.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line54">line 54</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>num</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                Number of cards to be dealt out
-                
-            </td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
-
-
-<div class="param-desc">
-    An array of the selected cards
-</div>
-
-    
-</div>
-
-
-
-</div>
-        
-            
-<div class="section-method">
-
-    
-
-    <h4 class="name" id="generateDeck"><span class="type-signature">(async) </span>generateDeck<span class="signature">(path, deckObj)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    This function fills the Deck with the proper cards according to which Deck
-the user has chosen.
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="main.js.html">main.js</a>, <a href="main.js.html#line73">line 73</a>
+        <a href="main.js.html">main.js</a>, <a href="main.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -395,26 +277,10 @@ the user has chosen.
 
             <td class="type">
             
-            </td>
-
-            
-
-            
-
-            <td class="description last">
-                The file path to the JSON file containing deck information
                 
-            </td>
-        </tr>
+<span class="param-type"><code>string</code></span>
 
-    
 
-        <tr>
-            
-                <td class="name"><code>deckObj</code></td>
-            
-
-            <td class="type">
             
             </td>
 
@@ -423,7 +289,7 @@ the user has chosen.
             
 
             <td class="description last">
-                The Deck object that will be filled with cards
+                path to JSON file containing deck details
                 
             </td>
         </tr>
@@ -445,23 +311,24 @@ the user has chosen.
 
 
 
-<div class="section-returns">
-<h5>Returns:</h5>
-
-        
 
 
-<div class="param-desc">
-    N/A
 </div>
+    
+    </div>
 
     
-</div>
 
+    
 
+    
 
-</div>
-        
+     
+
+    
+
+    
+
     
 
     
@@ -479,7 +346,7 @@ the user has chosen.
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Jun 04 2023 05:47:09 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sun Jun 04 2023 07:05:01 GMT+0000 (Coordinated Universal Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
