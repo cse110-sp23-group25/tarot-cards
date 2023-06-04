@@ -174,15 +174,15 @@ test('Background image changes when a card is clicked', () => {
     expect(cardElement.style.backgroundImage).toBe("url(new_image.png)");
 });
 
-//check if the background image change when click twice(it should not change)
-// test('Background image stay the same when clicking twice', () => {
-//     const cardElement = document.createElement('div');
-//     cardElement.setAttribute('class', 'card');
-//     cardElement.style.backgroundImage = 'url("old_image.png")';
-//     cardElement.addEventListener('click', () => {
-//         cardElement.style.backgroundImage = 'url("new_image.png")';
-//     });
-//     cardElement.click();
-//     cardElement.click();
-//     expect(cardElement.style.backgroundImage).toBe("url(new_image.png)");
-// });
+// check if the background image change when click twice(it should not change)
+test('Background image stay the same when clicking twice', () => {
+    const cardElement = document.createElement('div');
+    cardElement.setAttribute('class', 'card');
+    cardElement.style.backgroundImage = 'url("old_image1.png")';
+    cardElement.addEventListener('click', () => {
+        cardElement.style.backgroundImage = 'url("new_image1.png")';
+    });
+    cardElement.click();
+    cardElement.click();
+    expect(cardElement.style.backgroundImage).toBe("url(new_image1.png)");
+});
