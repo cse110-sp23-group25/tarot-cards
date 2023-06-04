@@ -19,9 +19,9 @@
     },
 
     "scripts": {
-        "build": "babel src -d lib",
-        "test": "jest",
-        "start": "node ./src/js/main.js"
+        "start": "serve -s build",
+        "build": "react-scripts build",
+        "test": "jest"
     },
 
     "dependencies": {
