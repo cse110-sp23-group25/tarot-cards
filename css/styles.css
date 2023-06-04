@@ -60,6 +60,7 @@ body {
   transform-style: preserve-3d;
 }
 
+
 .card-flip {
   transform: rotateY(360deg);
 }
@@ -107,16 +108,18 @@ body {
 }
 
 #disp-fort-butt {
-  font-size: large;
-  grid-column: 3;
-  grid-row: 1;
+  font-size: 60px;
+  grid-column: 2;
+  grid-row: 2;
   justify-self: center;
   color: black;
   padding: 5px 20px;
   border-radius: 10px;
-  max-width: 250px;
-  max-height: 50px;
+  max-width: 2500px;
+  max-height: 100px;
   animation: glowing 3000ms infinite;
+  z-index: 3;
+  cursor: pointer;
 }
 
 #top-card-image {
@@ -198,4 +201,70 @@ body {
 #left-card-name,
 #middle-card-name {
   justify-self: center;
+}
+
+#welcome-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+#welcome-page h1 {
+  font-size: 4em;
+  font-weight: bold;
+}
+
+#start-button {
+  font-size: 3em;
+  padding: 10px;
+  margin-top: 20px; 
+  color: black;
+  border-radius: 10px;
+  max-width: 2500px;
+  max-height: 100px;
+  animation: glowing 3000ms infinite;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.fade-out {
+  transition: opacity 2s ease-out;
+  opacity: 0;
+}
+
+.fade-out-cards {
+  transition: opacity 5s ease-out;
+  opacity: 0;
+}
+
+.deck {
+  position: absolute;
+  grid-column: 2; 
+  grid-row: 2;
+  transform: translate(-50%, -50%);
+  z-index: 1; 
+}
+
+@keyframes card0Animation {
+  from { grid-column: 2; grid-row: 2; }
+  to { grid-column: 2; grid-row: 1; }
+}
+@keyframes card1Animation {
+  from { grid-column: 2; grid-row: 2; }
+  to { grid-column: 3; grid-row: 2; }
+}
+@keyframes card2Animation {
+  from { grid-column: 2; grid-row: 2;}
+  to { grid-column: 2; grid-row: 3; }
+}
+@keyframes card3Animation {
+  from { grid-column: 2; grid-row: 2; }
+  to { grid-column: 1; grid-row: 2; }
+}
+@keyframes card4Animation {
+  from { grid-column: 2; grid-row: 2; }
+  to { grid-column: 2; grid-row: 2; }
 }

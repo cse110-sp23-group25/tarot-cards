@@ -7,16 +7,21 @@
   <audio id="background-sound" src="../assets/background_music.mp3" autoplay loop></audio>
 </head>
 <body>
+  <div id="welcome-page">
+    <h1>Welcome to our Tarot Card Reading Page!</h1>
+    <button id="start-button">Start Reading!</button>
+  </div>
+  
   <div class="parent">
     <div id="card-page" class="container pre">
 
       <button id="disp-fort-butt" hidden>See Fortunes</button>
             
-      <div class="card top"></div>
-      <div class="card right"></div>
-      <div class="card bottom"></div>
-      <div class="card left"></div>
-      <div class="card middle"></div>
+      <div class="card top" id="card0" hidden></div>
+      <div class="card right" id="card1" hidden></div>
+      <div class="card bottom" id="card2" hidden></div>
+      <div class="card left" id="card3" hidden></div>
+      <div class="card middle" id="card4" hidden></div>
       
     </div>
   

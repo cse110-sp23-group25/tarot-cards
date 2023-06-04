@@ -1,4 +1,48 @@
-window.addEventListener('DOMContentLoaded', init);
+window.onload = function() {
+    const welcomeButton = document.getElementById('start-button');
+    welcomeButton.addEventListener('click', () => {
+        let welcomePage = document.getElementById('welcome-page');
+        welcomePage.classList.add('fade-out');
+        setTimeout(function() {
+            welcomePage.style.display = 'none';
+            // When welcome button is clicked, go to the Tarot Cards
+            shuffleCards();
+            init();
+        }, 2000);
+    });
+}
+
+
+/**
+This function shuffles the cards and animates them to their respective positions on the grid
+@returns N/A
+*/
+function shuffleCards() {
+    const animations = [
+        { name: 'card0Animation', gridRow: 1, gridColumn: 2 }, // top
+        { name: 'card1Animation', gridRow: 2, gridColumn: 3 }, // right
+        { name: 'card2Animation', gridRow: 3, gridColumn: 2 }, // bottom
+        { name: 'card3Animation', gridRow: 2, gridColumn: 1 }, // left
+        { name: 'card4Animation', gridRow: 2, gridColumn: 2 }  // middle
+    ];
+
+    for (let i = 0; i < 5; i++) {
+        let card = document.getElementById(`card${i}`);
+        card.style.gridColumn = 2; // Initially set all cards to the center of the grid.
+        card.style.gridRow = 2;
+        card.removeAttribute('hidden');
+    }
+
+    let cards = document.querySelectorAll('.card');
+    for(let i = 0; i < cards.length; i++) {
+        let delay = i * 1; // 1 second delay for each card.
+        setTimeout(() => {
+            cards[i].style.animation = `2s ease-out 0s forwards ${animations[i].name}, 0.5s linear 2s forwards flip`;
+            cards[i].style.zIndex = `${5 - i}`;
+            cards[i].classList.remove('deck');
+        }, delay * 1000); // convert delay to milliseconds.
+    }
+  }
 
 /**
  * This class is to represent a tarot card object. Each card will a name, 5
@@ -120,6 +164,10 @@ function init () {
             numCardsFlipped++;
             currentCard.classList.toggle('card-flip');
 
+            currentCard.scrollIntoView({
+                behavior: 'smooth'
+            });
+
             flipped[index] = true;
             if (numCardsFlipped === 5) {
                 allFlipped();
@@ -133,12 +181,21 @@ function init () {
      * presented.
      */
     function allFlipped () {
-        const button = document.getElementById('disp-fort-butt');
-        // button.style.display = 'block';
-        button.removeAttribute('hidden');
-        button.scrollIntoView({
-            behavior: 'smooth'
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card) => {
+            card.classList.add('fade-out-cards');
         });
+
+        const button = document.getElementById('disp-fort-butt');
+        setTimeout(() => {
+            // button.style.display = 'block';
+            cards.forEach((card) => {
+                card.removeEventListener('click', () => flipCard(i));
+                card.style.cursor = 'default';
+            });
+            button.removeAttribute('hidden');
+        }, 5000);
+
 
         // on click, load the fortunes and display them
         /*
