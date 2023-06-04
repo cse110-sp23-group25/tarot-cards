@@ -2,8 +2,6 @@
 
     "devDependencies": {
 
-        "@babel/cli": "^7.21.5",
-
         "@babel/core": "^7.22.1",
 
         "@babel/preset-env": "^7.22.4",
@@ -11,6 +9,10 @@
         "babel-jest": "^29.5.0",
 
         "jest": "^29.5.0",
+
+        "jest-environment-jsdom": "^29.5.0",
+
+        "jest-environment-jsdom-global": "^4.0.0",
 
         "jest-puppeteer": "^9.0.0",
 
@@ -26,17 +28,11 @@
 
     },
 
-    "dependencies": {
+    "jest": {
 
-        "jest-environment-jsdom": "^29.5.0",
+        "preset": "jest-puppeteer",
 
-        "jest-fetch-mock": "^3.0.3",
-
-        "node-fetch": "^3.3.1",
-
-        "page": "^1.11.6",
-
-        "whatwg-fetch": "^3.6.2"
+        "verbose": true
 
     }
 
