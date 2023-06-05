@@ -10,7 +10,7 @@ window.onload = function() {
             init();
         }, 2000);
     });
-}
+};
 
 
 /**
@@ -42,7 +42,7 @@ function shuffleCards() {
             cards[i].classList.remove('deck');
         }, delay * 1000); // convert delay to milliseconds.
     }
-  }
+}
 
 /**
  * @class
