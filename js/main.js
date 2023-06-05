@@ -168,6 +168,8 @@ class Deck {
  * 
  */
 function init () {
+    var audio = document.getElementById("background-music");
+    audio.play();
     const NUM_CARDS = 5;
     const PATH = '../assets/card_package/fortunes.json';
     let fiveChosenCards = [];
