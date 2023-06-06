@@ -10,7 +10,8 @@
           "The Chariot card has been placed as your left card, which represents a recommended course of action. The Chariot as an action recommends it is time to be brave, take hold of the reins and steer your life in the direction you want it to go.",
           "The Chariot card has been placed as your middle card, which represents your overall outcome. The Chariot as an outcome indicates victory, control, and success in the end."
         ],
-        "img": "chariot.png"
+        "img": "chariot.png",
+        "alt": "Chariot card"
       },
       {
         "name": "Death",
@@ -21,7 +22,8 @@
           "The Death card has been placed as your left card, which represents a recommended course of action. Death as an action recommends that transformation is inevitable. Resist the urge to fight the change; instead, strive to understand its purpose in your life.",
           "The Death card has been placed as your middle card, which represents your overall outcome. Death as an outcome indicates you will experience a significant transformation. The end of this phase in your life will make way for a fresh start."
         ],
-        "img": "death.png"
+        "img": "death.png",
+        "alt": "Death card"
       },
       {
         "name": "Devil",
@@ -32,7 +34,8 @@
           "The Devil card has been placed as your left card, which represents a recommended course of action. The Devil as an action recommends increased awareness of becoming a prisoner of your own freedom. Balance is crucial.",
           "The Devil card has been placed as your middle card, which represents your overall outcome. The Devil as an outcome indicates you'll soon break free from your bonds if you confront them head on. There will be liberation from unhealthy attachments, leading to personal growth."
         ],
-        "img": "devil.png"
+        "img": "devil.png",
+        "alt": "Devil card"
       },
       {
         "name": "The Emperor",
@@ -43,7 +46,8 @@
           "The Emperor card has been placed as your left card, which represents a recommended course of action. The Emperor as an action recommends that you keep in mind opinions of those around you.",
           "The Emperor card has been placed as your middle card, which represents your overall outcome. The Emperor as an outcome indicates success through leadership and discipline. A stable environment will be achieved through your efforts."
         ],
-        "img": "emperor.png"
+        "img": "emperor.png",
+        "alt": "Emperor card"
       },
       {
         "name": "The Empress",
@@ -54,7 +58,8 @@
           "The Empress card has been placed as your left card, which represents a recommended course of action. The Empress as an action recommends your nurturing and compassionate side will guide you. Be mindful not to lose yourself while taking care of others. Maintain your individuality.",
           "The Empress card has been placed as your middle card, which represents your overall outcome. The Empress as an outcome indicates your situation is likely to result in personal growth and abundance. Your loving and caring approach will bear fruit."
         ],
-        "img": "empress.png"
+        "img": "empress.png",
+        "alt": "Empress card"
       },
       {
         "name": "The Fool",
@@ -65,7 +70,8 @@
           "The Fool card has been placed as your left card, which represents a recommended course of action. The Fool as an action recommends you live in the moment and follow your heart. Remember, a leap of faith often precedes the greatest life-changing experiences.",
           "The Fool card has been placed as your middle card, which represents your overall outcome. The Fool as an outcome indicates your situation results in a new journey or beginning. Embrace this change, as it could lead to great personal growth."
         ],
-        "img": "fool.jpeg"
+        "img": "fool.jpeg",
+        "alt": "Fool card"
       },
       {
         "name": "Judgement",
@@ -76,7 +82,8 @@
           "The Judgement card has been placed as your left card, which represents a recommended course of action. Judgement as an action recommends practicing self-forgiveness. Don't let past mistakes hinder your progress. Use this as an opportunity to learn and make better judgements in the future.",
           "The Judgement card has been placed as your middle card, which represents your overall outcome. Judgement as an outcome indicates your situation culminates in a renewal, a new beginning. Your past experiences have shaped you, and now you are ready to face a new chapter with better judgement and clarity."
         ],
-        "img": "judgement.png"
+        "img": "judgement.png",
+        "alt": "Judgement card"
       },
       {
         "name": "Justice",
@@ -87,7 +94,8 @@
           "The Justice card has been placed as your left card, which represents a recommended course of action. Justice as an action recommends if the situation seems unjust, do not despair. Make changes to restore balance. Your commitment to fairness and justice will prevail.",
           "The Justice card has been placed as your middle card, which represents your overall outcome. Justice as an outcome indicates the outcome will be fair, and all will get what they deserve. It might be a time of reckoning, but ultimately, it brings about justice and equilibrium."
         ],
-        "img": "justice.png"
+        "img": "justice.png",
+        "alt": "Justice card"
       },
       {
         "name": "Lovers",
@@ -98,7 +106,8 @@
           "The Lovers card has been placed as your left card, which represents a recommended course of action. The Lovers as an action recommends making decisions based on love and unity. Seek a balance between your heart and mind. Let your values guide your choices.",
           "The Lovers card has been placed as your middle card, which represents your overall outcome. The Lovers as an outcome indicates the outcome holds the promise of deep love, connection, and harmony. Embrace the union that brings joy and fulfillment to your life."
         ],
-        "img": "lovers.png"
+        "img": "lovers.png",
+        "alt": "Lovers card"
       },
       {
         "name": "Magician",
@@ -109,7 +118,8 @@
           "The Magician card has been placed as your left card, which represents a recommended course of action. The Magician as an action recommends maintaining clarity of intention and ethical conduct. Use your power wisely and responsibly, ensuring your actions align with your highest good and the greater good.",
           "The Magician card has been placed as your middle card, which represents your overall outcome. The Magician as an outcome indicates success and mastery. Your ability to utilize your skills and harness the energy of the universe will lead to significant achievements."
         ],
-        "img": "magician.png"
+        "img": "magician.png",
+        "alt": "Magician card"
       },
       {
         "name": "Stars",
@@ -120,7 +130,8 @@
           "The Stars card has been placed as your left card, which represents a recommended course of action. Stars as an action recommend believing in the power of your dreams. Keep your vision alive and take inspired actions towards your goals. The universe is supporting your aspirations.",
           "The Stars card has been placed as your middle card, which represents your overall outcome. Stars as an outcome indicates the outcome brings a sense of fulfillment and spiritual growth. Your dreams and aspirations are coming to fruition. Embrace the blessings of the universe."
         ],
-        "img": "stars.png"
+        "img": "stars.png",
+        "alt": "Stars card"
       },
       {
         "name": "Moon",
@@ -131,7 +142,8 @@
           "The Moon card has been placed as your left card, which represents a recommended course of action. Moon as an action recommends embracing the mystery and allow your intuition to guide you. Trust in the unseen forces at play and have faith in your own inner knowing.",
           "The Moon card has been placed as your middle card, which represents your overall outcome. Moon as an outcome indicates the outcome holds profound personal growth and transformation. Embrace the journey of self-discovery and let your intuition be your guiding light."
         ],
-        "img": "moon.png"
+        "img": "moon.png",
+        "alt": "Moon card"
       },
       {
         "name": "Fortune",
@@ -142,7 +154,8 @@
           "The Fortune card has been placed as your left card, which represents a recommended course of action. Fortune as an action recommends embracing the ebb and flow of life. Recognize that change is inevitable and seek opportunities for growth and expansion amidst the uncertainty.",
           "The Fortune card has been placed as your middle card, which represents your overall outcome. Fortune as an outcome indicates the outcome brings unexpected turns of fortune. Be prepared for positive surprises and embrace the new opportunities that come your way."
         ],
-        "img": "fortune.png"
+        "img": "fortune.png",
+        "alt": "Fortune card"
       },
       {
         "name": "Hanged Man",
@@ -153,7 +166,8 @@
           "The Hanged Man card has been placed as your left card, which represents a recommended course of action. The Hanged Man as an action recommends embracing the pause and stillness. Use this time to reflect, gain clarity, and look at situations from a fresh perspective. Trust that the answers will come in due time.",
           "The Hanged Man card has been placed as your middle card, which represents your overall outcome. The Hanged Man as an outcome indicates the outcome brings profound transformation and growth. By surrendering and gaining a new perspective, you will find liberation and move forward with a renewed sense of purpose."
         ],
-        "img": "hanged-man.png"
+        "img": "hanged-man.png",
+        "alt": "Hanged Man card"
       },
       {
         "name": "Hermit",
@@ -164,7 +178,8 @@
           "The Hermit card has been placed as your left card, which represents a recommended course of action. The Hermit as an action recommends embracing the wisdom gained from introspection. Trust your inner voice and honor your personal truth. Seek guidance from within as you move forward.",
           "The Hermit card has been placed as your middle card, which represents your overall outcome. The Hermit as an outcome indicates the outcome brings profound self-awareness and spiritual growth. Through introspection and self-reflection, you will find the answers and guidance you seek."
         ],
-        "img": "hermit.png"
+        "img": "hermit.png",
+        "alt": "Hermit card"
       },
       {
         "name": "Hierophant",
@@ -175,7 +190,8 @@
           "The Hierophant card has been placed as your left card, which represents a recommended course of action. The Hierophant as an action recommends seeking guidance and knowledge from sources that resonate with your inner truth. Trust your own intuition and find your unique path of spiritual growth.",
           "The Hierophant card has been placed as your middle card, which represents your overall outcome. The Hierophant as an outcome indicates the outcome brings a deep connection to your spiritual beliefs and a sense of inner harmony. Embrace the wisdom gained from both tradition and your own spiritual journey."
         ],
-        "img": "hierophant.png"
+        "img": "hierophant.png",
+        "alt": "Hierophant card"
       },
       {
         "name": "High Priest",
@@ -186,7 +202,8 @@
           "The High Priest card has been placed as your left card, which represents a recommended course of action. The High Priest as an action recommends seeking spiritual wisdom and connection from sources that resonate with your soul. Trust your inner guidance and let it lead you towards spiritual growth and enlightenment.",
           "The High Priest card has been placed as your middle card, which represents your overall outcome. The High Priest as an outcome indicates the outcome brings profound spiritual insights and connection. Embrace the wisdom gained from your spiritual journey and let it guide you towards higher levels of consciousness."
         ],
-        "img": "high-priest.png"
+        "img": "high-priest.png",
+        "alt": "High Priest card"
       },
       {
         "name": "Strength",
@@ -197,7 +214,8 @@
           "The Strength card has been placed as your left card, which represents a recommended course of action. Strength as an action recommends knowing that strength comes not only from overcoming obstacles but also from personal growth and transformation.",
           "The Strength card has been placed as your middle card, which represents your overall outcome. Strength as an outcome indicates the outcome shows you emerging a stronger and more resilient individual with the wisdom to navigate future obstacles with unwavering strength."
         ],
-        "img": "strength.png"
+        "img": "strength.png",
+        "alt": "Strength card"
       },
       {
         "name": "Sun",
@@ -208,7 +226,8 @@
           "The Sun card has been placed as your left card, which represents a recommended course of action. Sun as an action recommends embracing the power of a smile.",
           "The Sun card has been placed as your middle card, which represents your overall outcome. Sun as an outcome indicates the outcome suggests a fortune of a bright and radiant future that awaits you."
         ],
-        "img": "sun.png"
+        "img": "sun.png",
+        "alt": "Sun card"
       },
       {
         "name": "Temperance",
@@ -219,7 +238,8 @@
           "The Temperance card has been placed as your left card, which represents a recommended course of action. Temperance as an action recommends harnassing the profound power found in taking deep breaths; it is in these moments of intentional stillness and presence that you can find solace and regain clarity.",
           "The Temperance card has been placed as your middle card, which represents your overall outcome. Temperance as an outcome indicates the outcome brings a sense of the power of surrender, the beauty of divine timing, and the transformative nature of stillness."
         ],
-        "img": "temperance.png"
+        "img": "temperance.png",
+        "alt": "Temperance card"
       },
       {
         "name": "Tower",
@@ -230,7 +250,8 @@
           "The Tower card has been placed as your left card, which represents a recommended course of action. The Tower as an action recommends embracing the unknown, adapt with resilience, and navigate this change with unwavering courage.",
           "The Tower card has been placed as your middle card, which represents your overall outcome. The Tower as an outcome indicates the outcome brings a radiant fortune awaiting you in the realm of new beginnings."
         ],
-        "img": "tower.jpeg"
+        "img": "tower.jpeg",
+        "alt": "Tower card"
       },
       {
         "name": "World",
@@ -241,7 +262,8 @@
           "The World card has been placed as your left card, which represents a recommended course of action. The World as an action recommends keeping harmony in mind as your steadfast companion.",
           "The World card has been placed as your middle card, which represents your overall outcome. The World as an outcome indicates the outcome suggests you delving into the depths of self-discovery, knowing that every step brings you closer to a profound sense of completeness."
         ],
-        "img": "world.png"
+        "img": "world.png",
+        "alt": "World card"
       }
     ]
   }

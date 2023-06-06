@@ -58,12 +58,14 @@ class Card {
      * @param {string} name name of card
      * @param {string[]} fortunes 5 fortunes of the card
      * @param {string} img local path to card image
+     * @param {string} alt alt html description
      * @version 0.1
      */
-    constructor (name, fortunes, img) {
+    constructor (name, fortunes, img, alt) {
         this.name = name;
         this.fortunes = fortunes;
         this.img = img;
+        this.alt = alt;
     }
 
     /**
@@ -96,7 +98,21 @@ class Card {
      */
     getImg () {
         return this.img;
+    }   
+    
+    /**
+    * @function
+    * @name getAlt
+    * @description This method is a getter for the Card's alt description.
+    * @returns Alt description
+    * @version 0.2
+    */
+    getAlt () {
+       return this.alt;
     }
+
+
+    
 }
 
 /**
@@ -153,7 +169,7 @@ class Deck {
         const data = await response.json();
 
         for (let i = 0; i < data.deck.card.length; i++) {
-            const tempCard = new Card(data.deck.card[i].name, data.deck.card[i].fortunes, data.deck.card[i].img);
+            const tempCard = new Card(data.deck.card[i].name, data.deck.card[i].fortunes, data.deck.card[i].img, data.deck.card[i].alt);
             this.cards.push(tempCard);
         }
     }
@@ -364,6 +380,7 @@ function init () {
                 cardNameToDisplay.textContent = fiveChosenCards[i].getName();
 
                 cardImageToDisplay.removeAttribute('hidden');
+                cardImageToDisplay.alt = fiveChosenCards[i].getAlt();
                 cardFortuneToDisplay.removeAttribute('hidden');
                 cardNameToDisplay.removeAttribute('hidden');
                 cardImageToDisplay.scrollIntoView({
