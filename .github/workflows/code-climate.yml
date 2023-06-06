@@ -4,12 +4,15 @@ on:
   pull_request:
     branches: ["main"]
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
   run-coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install Modules
-      - run: yarn
       - name: Test & publish code coverage
       - uses: paambaati/codeclimate-action@v4.0.0
         env:
