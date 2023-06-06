@@ -7,6 +7,7 @@ jobs:
   run-coverage:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Install Modules
       - run: yarn
       - name: Test & publish code coverage
