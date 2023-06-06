@@ -262,19 +262,22 @@ function init () {
 
             // clear the cards off the page and change background
             document.getElementById('card-page').style.display = 'none';
-            document.body.style.backgroundImage = "none";
+            document.body.style.backgroundImage = "url(../assets/background_photo_fortune_page.png)";
             document.body.style.backgroundColor = "tan";
             const fortuneList = [];
 
             // set up receipt
             document.getElementById('fortune-page').style.backgroundColor = "#f5f0f0";
             document.getElementById('fortune-page').style.boxShadow = "2px 2px 4px 8px rgba(0, 0, 0, 0.2)";
-
             document.getElementById('receipt-header').removeAttribute('hidden');
             document.getElementById('receipt-footer').removeAttribute('hidden');
 
+            // print date on receipt
+            const date = new Date();
+            document.getElementById('time-date').textContent = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+
             // populate the fortuneList array with the proper fortunes
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < NUM_CARDS; i++) {
                 const fortunesOfCard = fiveChosenCards[i].getFortunes();
                 let fortuneText;
 
@@ -308,7 +311,7 @@ function init () {
             }
 
             // display the fortunes
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < NUM_CARDS; i++) {
 
                 let cardImageToDisplay;
                 let cardFortuneToDisplay;
