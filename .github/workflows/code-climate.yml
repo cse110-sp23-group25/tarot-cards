@@ -4,19 +4,19 @@ on:
   pull_request:
     branches: ["main"]
 jobs:
-  build:
+  coverage:
+    name: coverage
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: yarn
-  run-coverage:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v4.0.0
-        env:
-          CC_TEST_REPORTER_ID: 75402249aa8ad805943345af3ec632bb1ed9d8b853849c8925cd6d602931d4c4
-        with:
-          coverageCommand: yarn test --coverage
-          coverageLocations: coverage/lcov.info:lcov
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@master
+      with:
+        node-version: '12'
+    - run: npm install -g yarn
+    - run: yarn install
+    - run: yarn build
+    - uses: paambaati/codeclimate-action@v2.5.7
+      env:
+        CC_TEST_REPORTER_ID: 75402249aa8ad805943345af3ec632bb1ed9d8b853849c8925cd6d602931d4c4
+      with:
+        coverageCommand: yarn coverage
