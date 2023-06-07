@@ -1,28 +1,14 @@
-name: Test
+name: Coverage Transmission
 on: [push, pull_request]
 jobs:
-  run-tests:
+  coverage:
     runs-on: ubuntu-latest
     steps:
-      - name: before_build
-        uses: caffco/code-climate-github-action@v1.0.0
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v4.0.0
         env:
           CC_TEST_REPORTER_ID: 75402249aa8ad805943345af3ec632bb1ed9d8b853849c8925cd6d602931d4c4
         with:
-          run_before_build: 'true'
-      - name: Run tests
-        run: npm test -- --coverage
-      - name: collect_coverage
-        uses: caffco/code-climate-github-action@v1.0.0
-        env:
-          CC_TEST_REPORTER_ID: 75402249aa8ad805943345af3ec632bb1ed9d8b853849c8925cd6d602931d4c4
-        with:
-          collect_coverage: 'true'
-          coverage_file_patterns: |
-            **/*.lcov:lcov
-      - name: after_build
-        uses: caffco/code-climate-github-action@v1.0.0
-        env:
-          CC_TEST_REPORTER_ID: 75402249aa8ad805943345af3ec632bb1ed9d8b853849c8925cd6d602931d4c4
-        with:
-          run_after_build: 'true'
+          coverageCommand: npm test -- --coverage
+          coverageLocations: |
+            ${{github.workspace}}/*.lcov:lcov
