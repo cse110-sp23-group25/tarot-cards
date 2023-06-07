@@ -4,11 +4,14 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v4.0.0
-        env:
-          CC_TEST_REPORTER_ID: 75402249aa8ad805943345af3ec632bb1ed9d8b853849c8925cd6d602931d4c4
-        with:
-          coverageCommand: npm test -- --coverage
-          coverageLocations: |
-            ${{github.workspace}}/*.lcov:lcov
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Test & publish code coverage
+      uses: paambaati/codeclimate-action@v4.0.0
+      env:
+        CC_TEST_REPORTER_ID: 75402249aa8ad805943345af3ec632bb1ed9d8b853849c8925cd6d602931d4c4
+      with:
+        coverageCommand: yarn test --coverage
+        coverageLocations: |
+          ${{github.workspace}}/*.lcov:lcov
