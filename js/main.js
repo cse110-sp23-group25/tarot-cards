@@ -57,9 +57,9 @@ window.onload = function () {
  * @version 1.0
  */
 function toggleSettings() {
-    const volumeButton = document.getElementById('volume-button');
+    const settingsButton = document.getElementById('volume-button');
     const settingsPopup = document.getElementById('settings-popup');
-    volumeButton.addEventListener('click', () => {
+    settingsButton.addEventListener('click', () => {
         if (settingsPopup.style.display == "none") {
             settingsPopup.style.display = "flex";
         } else {
