@@ -10,23 +10,30 @@ body {
   background-color: #544541;
 }
 
-#settings-button {
+.nav-settings {
+  display: grid;
+  width: 100px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+}
+
+#volume-button {
   display: inline-flex;
   align-items: center;
   border-radius: 15px;
   padding: 8px;
   cursor: pointer;
   background-color: transparent;
-  position: relative;
-  top: 10px;
-  left: 10px;
+  grid-row: 1;
+  grid-column: 1;
 }
 
-.settings-icon {
+.volume-icon {
   display: inline-block;
   width: 30px;
   height: 30px;
-  background-image: url("../assets/settings.png");
+  background-image: url("../assets/settings/volume_level_2.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -35,7 +42,7 @@ body {
 #settings-popup {
   display: flex;
   border-radius: 20px;
-  background-color: tan;
+  background-color: #e8e4c95c;
   box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 20%);
   width: 200px;
   height: 50px;
@@ -50,16 +57,15 @@ body {
   padding: 8px;
   cursor: pointer;
   background-color: transparent;
-  position: relative;
-  top: 10px;
-  left: 20px;
+  grid-row: 1;
+  grid-column: 2;
 }
 
 .home-icon {
   display: inline-block;
   width: 30px;
   height: 30px;
-  background-image: url("../assets/home.png");
+  background-image: url("../assets/settings/home.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -97,7 +103,7 @@ body {
   justify-self: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.1fr 0.5fr;
   grid-row-gap: 5vh;
   width: 50vw;
   min-width: min-content;
@@ -211,7 +217,6 @@ body {
 }
 
 .card-name {
-  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -225,9 +230,16 @@ body {
   grid-row: 7;
   grid-column-start: span 3;
   justify-self: center;
+  font-family: "Courier New", Courier, monospace;
 }
 
-#receipt-footer *,
+#receipt-img {
+  justify-content: center;
+  width: 200px;
+  grid-column: 2;
+  padding-bottom: 40px;
+}
+
 #receipt-header * {
   font-family: "Courier New", Courier, monospace;
 }
@@ -236,7 +248,7 @@ body {
 #right-card-name,
 #bottom-card-name,
 #left-card-name,
-#middle-card-name {
+#middle-card-name{
   justify-self: center;
 }
 

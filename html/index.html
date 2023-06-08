@@ -2,23 +2,25 @@
 <html>
 <head>
   <title>#c0ffee</title>
-  <link rel="icon" type="image/png" href="../assets/logo_blue.png">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
   <audio id="background-sound" src="../assets/background/background_music.mp3" autoplay loop></audio>
 </head>
 <body>
 
-  <button id="settings-button">
-    <span class="settings-icon"></span>
-  </button>
+  <div class="nav-settings">
+    <button id="volume-button">
+      <span class="volume-icon" id="volume-img"></span>
+    </button>
+  
+    <button id="home-button">
+      <span class="home-icon"></span>
+    </button>
+  </div>
 
   <div id="settings-popup">
     <input type="range" min="0" max="100" value="50" step="1" id="volume-slider">
   </div>
-
-  <button id="home-button">
-    <span class="home-icon"></span>
-  </button>
 
   <div id="welcome-page">
     <h1>Welcome to our Tarot Card Reading Page!</h1>
@@ -64,10 +66,9 @@
       <img id="middle-card-image" alt="first card" hidden>
       <p class="fortunes" id="middle-card-fortune" hidden></p>
 
-      <div id="receipt-footer" hidden>
-        <h2>Thanks for visiting #c0ffee!</h2>
-        <p>Let us know how we can improve:<br> analytics TBD </p>
-      </div>
+      <h2 id="receipt-footer" hidden>Thanks for visiting #c0ffee!</h2>
+
+      <img id="receipt-img" src="../assets/receipt_logo.png" alt="#c0ffee logo" hidden>
 
     </div>
   </div>
