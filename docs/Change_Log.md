@@ -1,5 +1,15 @@
 # Change Log
 
+## June 7, 2023
+Re-generated tarot card images for "world", "chariot", & "lovers" as they do not appear on Github Pages. The "world" card now properly works, but "chariot" and "lovers" are still throwing errors on Github Pages, but not locally.
+*CI-PIPELINE: Successfully integrated Github Actions code climate workflow.*
+
+## June 5, 2023
+*CI-PIPELINE: Worked on adding Github Actions code climate workflow.*
+
+## June 4, 2023
+Designed and added welcome page as well as animations for cards being drawn. Merged style changes to main. Added more testing.
+
 ## June 3, 2023
 Refactored existing code for fortune generation to follow Semantic HTML standards. HTML elements are no longer generated in the javascript file, but are only modified. Added in background image and background music. Styled button which leads to page with the card fortunes. Styled fortune page to look like a receipt.
 
