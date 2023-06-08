@@ -16,7 +16,7 @@ Refactored existing code for fortune generation to follow Semantic HTML standard
 ## June 2, 2023
 Changed back of cards to be a new design. Fixed positioning of cards to make it friendly to viewport resizing. Fixed flip animation of cards to not invert the card images.
 
-*CI-PIPELINE: JSDocs successfully generate to `gh-pages` branch not using any Secrets. Documentation generates to `html` files. Tested out deployment files with Heroku, but encountered many compatibility issues.* 
+*CI-PIPELINE: JSDocs successfully generate to `gh-pages` branch not using any Secrets. Documentation generates to `html` files. Tested out deployment files with Heroku, but encountered many compatibility issues.*
 
 ## May 31, 2023
 More unit testing. Wrote tests for Card and Deck classes and functions. Attempted to write pupeteer tests for UI testing, but faced issues getting page to load.
