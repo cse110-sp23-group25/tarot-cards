@@ -64,11 +64,11 @@ function toggleSettings() {
  */
 function shuffleCards() {
     const animations = [
-        { name: 'card0Animation', gridRow: 1, gridColumn: 2 }, // top
-        { name: 'card1Animation', gridRow: 2, gridColumn: 3 }, // right
-        { name: 'card2Animation', gridRow: 3, gridColumn: 2 }, // bottom
-        { name: 'card3Animation', gridRow: 2, gridColumn: 1 }, // left
-        { name: 'card4Animation', gridRow: 2, gridColumn: 2 }  // middle
+        { name: 'card0-animation', gridRow: 1, gridColumn: 2 }, // top
+        { name: 'card1-animation', gridRow: 2, gridColumn: 3 }, // right
+        { name: 'card2-animation', gridRow: 3, gridColumn: 2 }, // bottom
+        { name: 'card3-animation', gridRow: 2, gridColumn: 1 }, // left
+        { name: 'card4-animation', gridRow: 2, gridColumn: 2 }  // middle
     ];
 
     for (let i = 0; i < 5; i++) {
@@ -153,7 +153,7 @@ class Card {
     * @version 0.2
     */
     getAlt () {
-       return this.alt;
+        return this.alt;
     }
 }
 
