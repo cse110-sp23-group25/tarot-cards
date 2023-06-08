@@ -3,11 +3,74 @@
 }
 
 body {
-  background-image: url("../assets/background_photo.png");
+  background-image: url("../assets/background/background_photo.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-color: #544541;
+}
+
+#settings-button {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 15px;
+  padding: 8px 8px;
+  cursor: pointer;
+  background-color: transparent;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+.settings-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/settings.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#settings-popup {
+  display: flex;
+  border-radius: 20px;
+  background-color: tan;
+  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-button {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 15px;
+  padding: 8px 8px;
+  cursor: pointer;
+  background-color: transparent;
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+
+.home-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/home.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#volume-slider {
+  width: 150px;
+  align-self: center;
+  justify-self: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .parent {
@@ -50,7 +113,7 @@ body {
   justify-self: center;
   width: 200px;
   height: 300px;
-  background-image: url("../assets/start.png");
+  background-image: url("../assets/card_package/start.png");
   background-size: cover;
 
   /* border: 1px dashed #ff0000 Dashed Red Line to help with Debugging/Visualization */
@@ -89,21 +152,6 @@ body {
   grid-column: 3;
   grid-row: 2;
 }
-
-/* #disp-fort-butt {
-  font-size: 2em;
-  grid-column: 2;
-  grid-row: 2;
-  justify-self: center;
-  color: black;
-  padding: 5px 20px;
-  border-radius: 10px;
-  max-width: 2500px;
-  max-height: 100px;
-  animation: glowing 3000ms infinite;
-  z-index: 3;
-  cursor: pointer;
-} */
 
 #top-card-image {
   grid-column: 2;
@@ -190,10 +238,6 @@ body {
 #left-card-name,
 #middle-card-name {
   justify-self: center;
-}
-
-.quantity {
-  grid-column: 1;
 }
 
 #welcome-page {

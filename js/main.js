@@ -1,4 +1,30 @@
 window.onload = function() {
+
+    const settingsPopupElem = document.getElementById('settings-popup');
+    settingsPopupElem.style.display = "none";
+    toggleSettings();
+
+    const homeButton = document.getElementById('home-button');
+    homeButton.addEventListener('click', () => {
+        location.reload();
+    });
+    
+    // handle volume
+    const volumeSlider = document.getElementById('volume-slider');
+    volumeSlider.addEventListener('input', adjustVolume);
+
+    /**
+     * @function
+     * @name adjustVolume
+     * @description This functions will increase or decrease the volume level depending on what the user has input in the slider. It is called when the slider moves.
+     * @version 0.2
+     */
+    function adjustVolume() {
+        const volumeValue = volumeSlider.value;
+        const musicAudio = document.getElementById('background-sound');
+        musicAudio.volume = volumeValue/100;
+    }
+
     const welcomeButton = document.getElementById('start-button');
     welcomeButton.addEventListener('click', () => {
         let welcomePage = document.getElementById('welcome-page');
@@ -11,6 +37,24 @@ window.onload = function() {
         }, 2000);
     });
 };
+
+/**
+ * @function
+ * @name toggleSettings
+ * @description This method allows for the behavior of the settings button. It provides functionality to the button so the settings appear when the button is clicked.
+ * @version 0.2
+ */
+function toggleSettings() {
+    const settingsButton = document.getElementById('settings-button');
+    const settingsPopup = document.getElementById('settings-popup');
+    settingsButton.addEventListener('click', () => {
+        if (settingsPopup.style.display == "none") {
+            settingsPopup.style.display = "flex";
+        } else {
+            settingsPopup.style.display = "none";
+        }
+    });
+}
 
 /**
  * @function
@@ -111,9 +155,6 @@ class Card {
     getAlt () {
        return this.alt;
     }
-
-
-    
 }
 
 /**
@@ -261,31 +302,10 @@ function init () {
             card.classList.add('fade-out-cards');
         });
 
-        // const button = document.getElementById('disp-fort-butt');
-        // setTimeout(() => {
-        //     // button.style.display = 'block';
-        //     cards.forEach((card) => {
-        //         card.removeEventListener('click', flipCard(i));
-        //         card.style.cursor = 'default';
-        //     });
-        //     button.removeAttribute('hidden');
-        // }, 5000);
-
-
-        // on click, load the fortunes and display them
-        /*
-        index 0 -> top card (current situation)
-        1 -> right card (your initial response)
-        2 -> bottom card (challenges)
-        3 -> left card (what you can change)
-        4 -> middle card (outcome)
-        */
-        // button.addEventListener('click', () => {
-
         setTimeout( () => {
             // clear the cards off the page and change background
             document.getElementById('card-page').style.display = 'none';
-            document.body.style.backgroundImage = "url(../assets/background_photo_fortune_page.png)";
+            document.body.style.backgroundImage = "url(../assets/background/background_photo_fortune_page.png)";
             document.body.style.backgroundColor = "tan";
             const fortuneList = [];
 
@@ -320,7 +340,7 @@ function init () {
                     fortuneText = fortunesOfCard[2];
                     break;
 
-                // dealing with what u can change card
+                // dealing with what you can change card
                 case 3:
                     fortuneText = fortunesOfCard[3];
                     break;

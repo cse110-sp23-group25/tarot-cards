@@ -4,18 +4,30 @@
   <title>#c0ffee</title>
   <link rel="icon" type="image/png" href="../assets/logo_blue.png">
   <link rel="stylesheet" type="text/css" href="../css/styles.css">
-  <audio id="background-sound" src="../assets/background_music.mp3" autoplay loop></audio>
+  <audio id="background-sound" src="../assets/background/background_music.mp3" autoplay loop></audio>
 </head>
 <body>
+
+  <button id="settings-button">
+    <span class="settings-icon"></span>
+  </button>
+
+  <div id="settings-popup">
+    <input type="range" min="0" max="100" value="50" step="1" id="volume-slider">
+  </div>
+
+  <button id="home-button">
+    <span class="home-icon"></span>
+  </button>
+
   <div id="welcome-page">
     <h1>Welcome to our Tarot Card Reading Page!</h1>
     <button id="start-button">Start Reading!</button>
   </div>
-  
-  <div class="parent">
-    <div id="card-page" class="container pre">
 
-      <!-- <button id="disp-fort-butt" hidden>See Fortunes</button> -->
+  <div class="parent">
+
+    <div id="card-page" class="container pre">
             
       <div class="card top" id="card0" hidden></div>
       <div class="card right" id="card1" hidden></div>
