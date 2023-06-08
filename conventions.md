@@ -7,7 +7,7 @@
 - Assets (Images, etc) within the /assets folder
 
 ## Branching
-- HOLD
+- Each sprint will be different. Depending on what we are working on in a specific sprint, have a new conversation and decision each week. For instance, if multiple of us are working on similar features, work on the same branch. Otherwise, if there is not much overlap on the tasks, make your own branch.
 
 ## Comments
 - Comment areas of code which may be confusing (comment with purpose, not just for the sake of commenting)
