@@ -1,5 +1,5 @@
 * {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
@@ -34,7 +34,7 @@ body {
   justify-self: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
   grid-row-gap: 5vh;
   width: 50vw;
   min-width: min-content;
@@ -90,7 +90,7 @@ body {
   grid-row: 2;
 }
 
-#disp-fort-butt {
+/* #disp-fort-butt {
   font-size: 2em;
   grid-column: 2;
   grid-row: 2;
@@ -103,7 +103,7 @@ body {
   animation: glowing 3000ms infinite;
   z-index: 3;
   cursor: pointer;
-}
+} */
 
 #top-card-image {
   grid-column: 2;
@@ -163,7 +163,8 @@ body {
 }
 
 .card-name {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #receipt-header {
@@ -242,18 +243,18 @@ body {
 
 @keyframes glowing {
   0% {
-    background-color: #79abed;
-    box-shadow: 0 0 5px #79abed;
+    background-color: #f0bd3c;
+    box-shadow: 0 0 5px #f0bd3c;
   }
 
   50% {
-    background-color: #4082da;
-    box-shadow: 0 0 20px #4082da;
+    background-color: #edb3219b;
+    box-shadow: 0 0 20px #edb3219b;
   }
 
   100% {
-    background-color: #79abed;
-    box-shadow: 0 0 5px #79abed;
+    background-color: #f0bd3c;
+    box-shadow: 0 0 5px #f0bd3c;
   }
 }
 

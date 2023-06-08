@@ -12,11 +12,12 @@ window.onload = function() {
     });
 };
 
-
 /**
-This function shuffles the cards and animates them to their respective positions on the grid
-@returns N/A
-*/
+ * @function
+ * @name shuffleCards
+ * @description This method implements the animation for the dealing of the cards. It handles the timeouts and delays as well as the movement of each card from the middle of the deck to its selected spot.
+ * @version 0.2
+ */
 function shuffleCards() {
     const animations = [
         { name: 'card0Animation', gridRow: 1, gridColumn: 2 }, // top
@@ -235,9 +236,13 @@ function init () {
             });
 
             flipped[index] = true;
-            if (numCardsFlipped === 5) {
-                allFlipped();
-            }
+            
+            setTimeout(() => {
+                if (numCardsFlipped === 5) {
+                    allFlipped();
+                }
+            }, 3000);
+
         }
     }
 
@@ -250,20 +255,21 @@ function init () {
      * @version 0.1
      */
     function allFlipped () {
+
         const cards = document.querySelectorAll('.card');
         cards.forEach((card) => {
             card.classList.add('fade-out-cards');
         });
 
-        const button = document.getElementById('disp-fort-butt');
-        setTimeout(() => {
-            // button.style.display = 'block';
-            cards.forEach((card) => {
-                card.removeEventListener('click', () => flipCard(i));
-                card.style.cursor = 'default';
-            });
-            button.removeAttribute('hidden');
-        }, 5000);
+        // const button = document.getElementById('disp-fort-butt');
+        // setTimeout(() => {
+        //     // button.style.display = 'block';
+        //     cards.forEach((card) => {
+        //         card.removeEventListener('click', flipCard(i));
+        //         card.style.cursor = 'default';
+        //     });
+        //     button.removeAttribute('hidden');
+        // }, 5000);
 
 
         // on click, load the fortunes and display them
@@ -274,8 +280,9 @@ function init () {
         3 -> left card (what you can change)
         4 -> middle card (outcome)
         */
-        button.addEventListener('click', () => {
+        // button.addEventListener('click', () => {
 
+        setTimeout( () => {
             // clear the cards off the page and change background
             document.getElementById('card-page').style.display = 'none';
             document.body.style.backgroundImage = "url(../assets/background_photo_fortune_page.png)";
@@ -388,7 +395,7 @@ function init () {
                 });
             }
 
-        });
+        }, 5000);
     }
     main();
 }
