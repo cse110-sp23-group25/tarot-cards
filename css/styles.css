@@ -20,7 +20,8 @@ body {
 
 #logo {
   border-radius: 45px;
-  background-color: rgba(192, 255, 238, 74.5%);
+  /* background-color: rgba(192, 255, 238, 74.5%); */
+  background-color: #C0FFEEBE
   padding: 12px;
   position: absolute;
   right: 10px;
