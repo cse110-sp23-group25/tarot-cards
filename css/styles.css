@@ -20,8 +20,7 @@ body {
 
 #logo {
   border-radius: 45px;
-  /* background-color: rgba(192, 255, 238, 74.5%); */
-  background-color: #C0FFEEBE;
+  background-color: #c0ffeebe;
   padding: 12px;
   position: absolute;
   right: 10px;
@@ -31,7 +30,7 @@ body {
 #welcome-msg {
   background-color: #fbffed;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 100%);
+  border-color: #000000ff;
   padding: 10px;
 }
 
@@ -60,7 +59,7 @@ body {
   display: flex;
   border-radius: 20px;
   background-color: #e8e4c95c;
-  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 20%);
+  box-shadow: 2px 2px 4px 4px #00000033;
   width: 200px;
   height: 50px;
   justify-content: center;
