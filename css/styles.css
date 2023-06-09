@@ -30,7 +30,7 @@ body {
 #welcome-msg {
   background-color: #fbffed;
   border-style: solid;
-  border-color: #000000ff;
+  border-color: #000f;
   padding: 10px;
 }
 
@@ -59,7 +59,7 @@ body {
   display: flex;
   border-radius: 20px;
   background-color: #e8e4c95c;
-  box-shadow: 2px 2px 4px 4px #00000033;
+  box-shadow: 2px 2px 4px 4px #0003;
   width: 200px;
   height: 50px;
   justify-content: center;
