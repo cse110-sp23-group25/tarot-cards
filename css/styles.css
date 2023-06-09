@@ -337,6 +337,7 @@ body {
     grid-column: 2;
     grid-row: 2;
   }
+
   to {
     grid-column: 2;
     grid-row: 1;
@@ -344,21 +345,48 @@ body {
 }
 
 @keyframes card1-animation {
-  from { grid-column: 2; grid-row: 2; }
-  to { grid-column: 3; grid-row: 2; }
+  from {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  to {
+    grid-column: 3;
+    grid-row: 2;
+  }
 }
 
 @keyframes card2-animation {
-  from { grid-column: 2; grid-row: 2; }
-  to { grid-column: 2; grid-row: 3; }
+  from {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  to {
+    grid-column: 2;
+    grid-row: 3;
+  }
 }
 
 @keyframes card3-animation {
-  from { grid-column: 2; grid-row: 2; }
-  to { grid-column: 1; grid-row: 2; }
+  from {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  to {
+    grid-column: 1;
+    grid-row: 2;
+  }
 }
 
 @keyframes card4-animation {
-  from { grid-column: 2; grid-row: 2; }
-  to { grid-column: 2; grid-row: 2; }
+  from {
+    grid-column: 2;
+    grid-row: 2; }
+
+  to{ 
+    grid-column: 2;
+    grid-row: 2;
+  }
 }
