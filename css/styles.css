@@ -18,6 +18,15 @@ body {
   grid-column-gap: 10px;
 }
 
+#logo {
+  border-radius: 45px;
+  background-color:rgba(192, 255, 238, 0.745);
+  padding: 12px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
 #volume-button {
   display: inline-flex;
   align-items: center;
