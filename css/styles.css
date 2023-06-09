@@ -104,6 +104,8 @@ body {
 }
 
 .container.pre {
+  position: relative;
+  top: -10%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
