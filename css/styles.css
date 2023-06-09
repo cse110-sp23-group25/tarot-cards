@@ -348,9 +348,10 @@ body {
 }
 
 @keyframes card3-animation {
-  from { grid-column: 2; grid-row: 2; }
-  to { grid-column: 1; grid-row: 2; }
+  from { grid-column: 2 / span 1; grid-row: 2 / span 1; }
+  to { grid-column: 1 / span 1; grid-row: 2 / span 1; }
 }
+
 
 @keyframes card4-animation {
   from { grid-column: 2; grid-row: 2; }
