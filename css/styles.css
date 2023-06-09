@@ -333,10 +333,14 @@ body {
 }
 
 @keyframes card0-animation {
-  from { grid-column: 2; 
-  grid-row: 2; }
-  to { grid-column: 2; 
-  grid-row: 1; }
+  from {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  to {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }
 
 @keyframes card1-animation {
