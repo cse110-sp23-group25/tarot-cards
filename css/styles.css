@@ -20,14 +20,14 @@ body {
 
 #logo {
   border-radius: 45px;
-  background-color:rgba(192, 255, 238, 0.745);
+  background-color:rgba(192, 255, 238, 74.5%);
   padding: 12px;
   position: absolute;
   right: 10px;
   top: 10px;
 }
 
-#welcome-msg{
+#welcome-msg {
   background-color:#fbffed;
   border-style: solid;
   border-color:rgba(0, 0, 0, 100%);
@@ -343,7 +343,7 @@ body {
 }
 
 @keyframes card2-animation {
-  from { grid-column: 2; grid-row: 2;}
+  from { grid-column: 2; grid-row: 2; }
   to { grid-column: 2; grid-row: 3; }
 }
 
