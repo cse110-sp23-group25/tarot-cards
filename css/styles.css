@@ -27,6 +27,13 @@ body {
   top: 10px;
 }
 
+#welcome-msg{
+  background-color:#fbffed;
+  border-style: solid;
+  border-color:rgba(0, 0, 0, 100%);
+  padding: 10px;
+}
+
 #volume-button {
   display: inline-flex;
   align-items: center;
