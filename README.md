@@ -8,4 +8,4 @@
 
 [Site](https://cse110-sp23-group25.github.io/tarot-cards/html/index.html)
 
-JSDocs: Currently generated in `html` format in `gh-pages` branch. Source files are available but site is TBD.
+JSDocs: Currently generated in `html` format in `gh-pages` branch.

@@ -1,5 +1,8 @@
 # Change Log
 
+## June 8, 2023
+Added and designed volume slider & home button. Moved tarot cards vertically upwards to fit better on screen. Styled welcome message & added branding to pages.
+
 ## June 7, 2023
 Re-generated tarot card images for "world", "chariot", & "lovers" as they do not appear on Github Pages. The "world" card now properly works, but "chariot" and "lovers" are still throwing errors on Github Pages, but not locally.
 *CI-PIPELINE: Successfully integrated Github Actions code climate workflow.*
