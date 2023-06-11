@@ -227,7 +227,7 @@ describe('Card', () => {
             const card = new Card(name, fortunes, img, alt);
             expect(card.getName()).toBe(name);
         });
-     });
+    });
     // Test the getFortunes() method
     describe('getFortunes', () => {
         it('should return an array of 5 fortunes', () => {
