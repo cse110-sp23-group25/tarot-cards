@@ -442,4 +442,4 @@ function init() {
     main();
 }
 
-module.exports = { Card, Deck };
+module.exports = { Card, Deck, toggleSettings, shuffleCards};
