@@ -203,13 +203,13 @@ test('Background image stay the same when clicking twice', () => {
 //test changed function
 describe('Card', () => {
     // Test the constructor
+    const name = 'Ace of Spades';
+    const fortunes = ['Good fortune 1', 'Good fortune 2', 'Good fortune 3', 'Good fortune 4', 'Good fortune 5'];
+    const img = 'path/to/image.png';
+    const alt = 'Alt description';
+    const card = new Card(name, fortunes, img, alt);
     describe('constructor', () => {
         it('should create a new Card object with the provided properties', () => {
-            const name = 'Ace of Spades';
-            const fortunes = ['Good fortune 1', 'Good fortune 2', 'Good fortune 3', 'Good fortune 4', 'Good fortune 5'];
-            const img = 'path/to/image.png';
-            const alt = 'Alt description';
-            const card = new Card(name, fortunes, img, alt);
             expect(card.name).toBe(name);
             expect(card.fortunes).toEqual(fortunes);
             expect(card.img).toBe(img);
@@ -220,22 +220,12 @@ describe('Card', () => {
     // Test the getName() method
     describe('getName', () => {
         it('should return the name of the Card', () => {
-            const name = 'Ace of Spades';
-            const fortunes = ['Good fortune 1', 'Good fortune 2', 'Good fortune 3', 'Good fortune 4', 'Good fortune 5'];
-            const img = 'path/to/image.png';
-            const alt = 'Alt description';
-            const card = new Card(name, fortunes, img, alt);
             expect(card.getName()).toBe(name);
         });
     });
     // Test the getFortunes() method
     describe('getFortunes', () => {
         it('should return an array of 5 fortunes', () => {
-            const name = 'Ace of Spades';
-            const fortunes = ['Good fortune 1', 'Good fortune 2', 'Good fortune 3', 'Good fortune 4', 'Good fortune 5'];
-            const img = 'path/to/image.png';
-            const alt = 'Alt description';
-            const card = new Card(name, fortunes, img, alt);
             expect(card.getFortunes()).toEqual(fortunes);
         });
     });
@@ -243,22 +233,12 @@ describe('Card', () => {
     // Test the getImg() method
     describe('getImg', () => {
         it('should return the local path of the Card\'s image', () => {
-            const name = 'Ace of Spades';
-            const fortunes = ['Good fortune 1', 'Good fortune 2', 'Good fortune 3', 'Good fortune 4', 'Good fortune 5'];
-            const img = 'path/to/image.png';
-            const alt = 'Alt description';
-            const card = new Card(name, fortunes, img, alt);
             expect(card.getImg()).toBe(img);
         });
     });
     // Test the getAlt() method
     describe('getAlt', () => {
         it('should return the alt description of the Card', () => {
-            const name = 'Ace of Spades';
-            const fortunes = ['Good fortune 1', 'Good fortune 2', 'Good fortune 3', 'Good fortune 4', 'Good fortune 5'];
-            const img = 'path/to/image.png';
-            const alt = 'Alt description';
-            const card = new Card(name, fortunes, img, alt);
             expect(card.getAlt()).toBe(alt);
         });
     });
