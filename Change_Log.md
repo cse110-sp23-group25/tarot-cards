@@ -14,7 +14,7 @@ Re-generated tarot card images for "world", "chariot", & "lovers" as they do not
 Designed and added welcome page as well as animations for cards being drawn. Merged style changes to main. Added more testing.
 
 ## June 3, 2023
-Refactored existing code for fortune generation to follow Semantic HTML standards. HTML elements are no longer generated in the javaScript file, but are only modified. Added in background image and background music. Styled button which leads to page with the card fortunes. Styled fortune page to look like a receipt.
+Refactored existing code for fortune generation to follow Semantic HTML standards. HTML elements are no longer generated in the JavaScript file, but are only modified. Added in background image and background music. Styled button which leads to page with the card fortunes. Styled fortune page to look like a receipt.
 
 ## June 2, 2023
 Changed back of cards to be a new design. Fixed positioning of cards to make it friendly to viewport resizing. Fixed flip animation of cards to not invert the card images.
