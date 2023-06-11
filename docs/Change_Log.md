@@ -1,25 +1,25 @@
-# Change Log
+# ChangeLog
 
 ## June 8, 2023
 Added and designed volume slider & home button. Moved tarot cards vertically upwards to fit better on screen. Styled welcome message & added branding to pages.
 
 ## June 7, 2023
-Re-generated tarot card images for "world", "chariot", & "lovers" as they do not appear on Github Pages. The "world" card now properly works, but "chariot" and "lovers" are still throwing errors on Github Pages, but not locally.
-*CI-PIPELINE: Successfully integrated Github Actions code climate workflow.*
+Re-generated tarot card images for "world", "chariot", & "lovers" as they do not appear on GitHub Pages. The "world" card now properly works, but "chariot" and "lovers" are still throwing errors on GitHub Pages, but not locally.
+*CI-PIPELINE: Successfully integrated GitHub Actions code climate workflow.*
 
 ## June 5, 2023
-*CI-PIPELINE: Worked on adding Github Actions code climate workflow.*
+*CI-PIPELINE: Worked on adding GitHub Actions code climate workflow.*
 
 ## June 4, 2023
 Designed and added welcome page as well as animations for cards being drawn. Merged style changes to main. Added more testing.
 
 ## June 3, 2023
-Refactored existing code for fortune generation to follow Semantic HTML standards. HTML elements are no longer generated in the javascript file, but are only modified. Added in background image and background music. Styled button which leads to page with the card fortunes. Styled fortune page to look like a receipt.
+Refactored existing code for fortune generation to follow Semantic HTML standards. HTML elements are no longer generated in the javaScript file, but are only modified. Added in background image and background music. Styled button which leads to page with the card fortunes. Styled fortune page to look like a receipt.
 
 ## June 2, 2023
 Changed back of cards to be a new design. Fixed positioning of cards to make it friendly to viewport resizing. Fixed flip animation of cards to not invert the card images.
 
-*CI-PIPELINE: JSDocs successfully generate to `gh-pages` branch not using any Secrets. Documentation generates to `html` files. Tested out deployment files with Heroku, but encountered many compatibility issues.*
+*CI-PIPELINE: JSDoc successfully generate to `gh-pages` branch not using any Secrets. Documentation generates to `html` files. Tested out deployment files with Heroku, but encountered many compatibility issues.*
 
 ## May 31, 2023
 More unit testing. Wrote tests for Card and Deck classes and functions. Attempted to write pupeteer tests for UI testing, but faced issues getting page to load.
@@ -38,7 +38,7 @@ Finished refactoring all code from original MVP. Functionality is the same, but 
 *CI-PIPELINE:* Added `.eslintrc.json` file to supply `super-linter` with custom style guidlines.
 
 ## May 27, 2023
-Major bug fix. Implemented an `async` function to generate the card deck. Earlier, the code was not waiting for the cards to generate causing issues.
+Major bugfix. Implemented an `async` function to generate the card deck. Earlier, the code was not waiting for the cards to generate causing issues.
 
 *CI-PIPELINE:* Successfully integrated automated JEST unit tests in CI-CD Test Repository.
 
@@ -63,7 +63,7 @@ Began development of MVP. Generated all fortunes. At the moment, cards are laid 
 ## May 19, 2023
 Create folder layouts and style guidlines.
 
-*CI-PIPELINE:* Began testing Github Actions files on [this](https://github.com/cse110-sp23-group25/CI-CD-test-repo) test repository. Attempted to integrate Codacy.
+*CI-PIPELINE:* Began testing GitHub Actions files on [this](https://gitHub.com/cse110-sp23-group25/CI-CD-test-repo) test repository. Attempted to integrate Codacy.
 
 ## May 17, 2023
 Used AI to generate 22 coffee themed tarot card images.
