@@ -46,44 +46,35 @@ window.onload = function () {
         setTimeout(function () {
             welcomePage.style.display = 'none';
             // When welcome button is clicked, go to the Tarot Cards
-            shuffleCards();
+            //shuffleCards:animation for the dealing of the cards. It handles the timeouts and delays as well as the movement of each card from the middle of the deck to its selected spot.
+            const animations = [
+                { name: 'card0-animation', gridRow: 1, gridColumn: 2 }, // top
+                { name: 'card1-animation', gridRow: 2, gridColumn: 3 }, // right
+                { name: 'card2-animation', gridRow: 3, gridColumn: 2 }, // bottom
+                { name: 'card3-animation', gridRow: 2, gridColumn: 1 }, // left
+                { name: 'card4-animation', gridRow: 2, gridColumn: 2 }  // middle
+            ];
+        
+            for (let i = 0; i < 5; i++) {
+                let card = document.getElementById(`card${i}`);
+                card.style.gridColumn = 2; // Initially set all cards to the center of the grid.
+                card.style.gridRow = 2;
+                card.removeAttribute('hidden');
+            }
+        
+            let cards = document.querySelectorAll('.card');
+            for (let i = 0; i < cards.length; i++) {
+                let delay = i * 1; // 1 second delay for each card.
+                setTimeout(() => {
+                    cards[i].style.animation = `2s ease-out 0s forwards ${animations[i].name}, 0.5s linear 2s forwards flip`;
+                    cards[i].style.zIndex = `${5 - i}`;
+                    cards[i].classList.remove('deck');
+                }, delay * 1000); // convert delay to milliseconds.
+            }
             init();
         }, 2000);
     });
 };
-
-/**
- * @function
- * @name shuffleCards
- * @description This method implements the animation for the dealing of the cards. It handles the timeouts and delays as well as the movement of each card from the middle of the deck to its selected spot.
- * @version 0.2
- */
-function shuffleCards() {
-    const animations = [
-        { name: 'card0-animation', gridRow: 1, gridColumn: 2 }, // top
-        { name: 'card1-animation', gridRow: 2, gridColumn: 3 }, // right
-        { name: 'card2-animation', gridRow: 3, gridColumn: 2 }, // bottom
-        { name: 'card3-animation', gridRow: 2, gridColumn: 1 }, // left
-        { name: 'card4-animation', gridRow: 2, gridColumn: 2 }  // middle
-    ];
-
-    for (let i = 0; i < 5; i++) {
-        let card = document.getElementById(`card${i}`);
-        card.style.gridColumn = 2; // Initially set all cards to the center of the grid.
-        card.style.gridRow = 2;
-        card.removeAttribute('hidden');
-    }
-
-    let cards = document.querySelectorAll('.card');
-    for (let i = 0; i < cards.length; i++) {
-        let delay = i * 1; // 1 second delay for each card.
-        setTimeout(() => {
-            cards[i].style.animation = `2s ease-out 0s forwards ${animations[i].name}, 0.5s linear 2s forwards flip`;
-            cards[i].style.zIndex = `${5 - i}`;
-            cards[i].classList.remove('deck');
-        }, delay * 1000); // convert delay to milliseconds.
-    }
-}
 
 /**
  * @class
