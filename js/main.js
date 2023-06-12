@@ -417,4 +417,4 @@ function init() {
     main();
 }
 
-module.exports = { Card, Deck, shuffleCards};
+module.exports = { Card, Deck };
