@@ -256,42 +256,42 @@ let dom;
 let container;
 
 beforeEach(() => {
-  dom = new JSDOM(html);
-  container = dom.window.document.querySelector('.parent');
+    dom = new JSDOM(html);
+    container = dom.window.document.querySelector('.parent');
 });
 
 test('It has a title of #c0ffee', () => {
-  expect(dom.window.document.querySelector('title').textContent).toBe('#c0ffee');
+    expect(dom.window.document.querySelector('title').textContent).toBe('#c0ffee');
 });
 
 test('It has a title of #c0ffee', () => {
-  expect(dom.window.document.querySelector('title').textContent).toBe('#c0ffee');
+    expect(dom.window.document.querySelector('title').textContent).toBe('#c0ffee');
 });
 
 test('It has a favicon', () => {
-  expect(dom.window.document.querySelector('link[rel="icon"]').getAttribute('href')).toBe('../assets/favicon.png');
+    expect(dom.window.document.querySelector('link[rel="icon"]').getAttribute('href')).toBe('../assets/favicon.png');
 });
 
 test('It has a logo', () => {
-  expect(dom.window.document.querySelector('img[id="logo"]').getAttribute('src')).toBe('../assets/receipt_logo.png');
+    expect(dom.window.document.querySelector('img[id="logo"]').getAttribute('src')).toBe('../assets/receipt_logo.png');
 });
 
 test('It has five hidden cards', () => {
-  expect(container.querySelectorAll('.card[hidden]').length).toBe(5);
+    expect(container.querySelectorAll('.card[hidden]').length).toBe(5);
 });
 
 test('Welcome message is correct', () => {
-  expect(dom.window.document.querySelector('#welcome-msg').textContent).toBe('Welcome to our Tarot Card Reading Page!');
+    expect(dom.window.document.querySelector('#welcome-msg').textContent).toBe('Welcome to our Tarot Card Reading Page!');
 });
 
 test('Start reading button exists', () => {
-  expect(dom.window.document.querySelector('#start-button').textContent).toBe('Start Reading!');
+    expect(dom.window.document.querySelector('#start-button').textContent).toBe('Start Reading!');
 });
 
 test('Volume button exists', () => {
-  expect(dom.window.document.querySelector('#volume-button')).not.toBeNull();
+    expect(dom.window.document.querySelector('#volume-button')).not.toBeNull();
 });
 
 test('Home button exists', () => {
-  expect(dom.window.document.querySelector('#home-button')).not.toBeNull();
+    expect(dom.window.document.querySelector('#home-button')).not.toBeNull();
 });
