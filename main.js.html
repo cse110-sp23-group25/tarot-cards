@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Card.html">Card</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Deck.html">Deck</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#allFlipped">allFlipped</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#displayFortune">displayFortune</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Draw">Draw</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#flipCard">flipCard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateDeck">generateDeck</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getAlt">getAlt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getFortunes">getFortunes</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getImg">getImg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getName">getName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#main">main</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#shuffleCards">shuffleCards</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Card.html">Card</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Deck.html">Deck</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#allFlipped">allFlipped</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#displayFortune">displayFortune</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Draw">Draw</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#flipCard">flipCard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateDeck">generateDeck</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getAlt">getAlt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getFortunes">getFortunes</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getImg">getImg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getName">getName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#main">main</a></span></li>
 </nav>
 
 <div id="main">
@@ -87,44 +87,35 @@
         setTimeout(function () {
             welcomePage.style.display = 'none';
             // When welcome button is clicked, go to the Tarot Cards
-            shuffleCards();
+            //shuffleCards:animation for the dealing of the cards. It handles the timeouts and delays as well as the movement of each card from the middle of the deck to its selected spot.
+            const animations = [
+                { name: 'card0-animation', gridRow: 1, gridColumn: 2 }, // top
+                { name: 'card1-animation', gridRow: 2, gridColumn: 3 }, // right
+                { name: 'card2-animation', gridRow: 3, gridColumn: 2 }, // bottom
+                { name: 'card3-animation', gridRow: 2, gridColumn: 1 }, // left
+                { name: 'card4-animation', gridRow: 2, gridColumn: 2 }  // middle
+            ];
+        
+            for (let i = 0; i &lt; 5; i++) {
+                let card = document.getElementById(`card${i}`);
+                card.style.gridColumn = 2; // Initially set all cards to the center of the grid.
+                card.style.gridRow = 2;
+                card.removeAttribute('hidden');
+            }
+        
+            let cards = document.querySelectorAll('.card');
+            for (let i = 0; i &lt; cards.length; i++) {
+                let delay = i * 1; // 1 second delay for each card.
+                setTimeout(() => {
+                    cards[i].style.animation = `2s ease-out 0s forwards ${animations[i].name}, 0.5s linear 2s forwards flip`;
+                    cards[i].style.zIndex = `${5 - i}`;
+                    cards[i].classList.remove('deck');
+                }, delay * 1000); // convert delay to milliseconds.
+            }
             init();
         }, 2000);
     });
 };
-
-/**
- * @function
- * @name shuffleCards
- * @description This method implements the animation for the dealing of the cards. It handles the timeouts and delays as well as the movement of each card from the middle of the deck to its selected spot.
- * @version 0.2
- */
-function shuffleCards() {
-    const animations = [
-        { name: 'card0-animation', gridRow: 1, gridColumn: 2 }, // top
-        { name: 'card1-animation', gridRow: 2, gridColumn: 3 }, // right
-        { name: 'card2-animation', gridRow: 3, gridColumn: 2 }, // bottom
-        { name: 'card3-animation', gridRow: 2, gridColumn: 1 }, // left
-        { name: 'card4-animation', gridRow: 2, gridColumn: 2 }  // middle
-    ];
-
-    for (let i = 0; i &lt; 5; i++) {
-        let card = document.getElementById(`card${i}`);
-        card.style.gridColumn = 2; // Initially set all cards to the center of the grid.
-        card.style.gridRow = 2;
-        card.removeAttribute('hidden');
-    }
-
-    let cards = document.querySelectorAll('.card');
-    for (let i = 0; i &lt; cards.length; i++) {
-        let delay = i * 1; // 1 second delay for each card.
-        setTimeout(() => {
-            cards[i].style.animation = `2s ease-out 0s forwards ${animations[i].name}, 0.5s linear 2s forwards flip`;
-            cards[i].style.zIndex = `${5 - i}`;
-            cards[i].classList.remove('deck');
-        }, delay * 1000); // convert delay to milliseconds.
-    }
-}
 
 /**
  * @class
@@ -479,7 +470,7 @@ module.exports = { Card, Deck, shuffleCards};</code></pre>
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Mon Jun 12 2023 00:24:35 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Mon Jun 12 2023 00:48:44 GMT+0000 (Coordinated Universal Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
