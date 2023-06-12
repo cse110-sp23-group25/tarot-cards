@@ -2,7 +2,16 @@ window.onload = function () {
 
     const settingsPopupElem = document.getElementById('settings-popup');
     settingsPopupElem.style.display = "none";
-    toggleSettings();
+    // toggleSettings();
+    const settingsButton = document.getElementById('volume-button');
+    const settingsPopup = document.getElementById('settings-popup');
+    settingsButton.addEventListener('click', () => {
+        if (settingsPopup.style.display == "none") {
+            settingsPopup.style.display = "flex";
+        } else {
+            settingsPopup.style.display = "none";
+        }
+    });
 
     const homeButton = document.getElementById('home-button');
     homeButton.addEventListener('click', () => {
@@ -56,17 +65,17 @@ window.onload = function () {
  * @description This method allows for the behavior of the volume button. It provides functionality to the button so the volume settings appear when the button is clicked.
  * @version 1.0
  */
-function toggleSettings() {
-    const settingsButton = document.getElementById('volume-button');
-    const settingsPopup = document.getElementById('settings-popup');
-    settingsButton.addEventListener('click', () => {
-        if (settingsPopup.style.display == "none") {
-            settingsPopup.style.display = "flex";
-        } else {
-            settingsPopup.style.display = "none";
-        }
-    });
-}
+// function toggleSettings() {
+//     const settingsButton = document.getElementById('volume-button');
+//     const settingsPopup = document.getElementById('settings-popup');
+//     settingsButton.addEventListener('click', () => {
+//         if (settingsPopup.style.display == "none") {
+//             settingsPopup.style.display = "flex";
+//         } else {
+//             settingsPopup.style.display = "none";
+//         }
+//     });
+// }
 
 /**
  * @function
@@ -442,4 +451,4 @@ function init() {
     main();
 }
 
-module.exports = { Card, Deck, toggleSettings, shuffleCards};
+module.exports = { Card, Deck, shuffleCards};
