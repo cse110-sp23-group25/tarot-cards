@@ -20,7 +20,6 @@ window.onload = function () {
 
     // handle volume
     const volumeSlider = document.getElementById('volume-slider');
-    // volumeSlider.addEventListener('input', adjustVolume);
     // change volume
     volumeSlider.addEventListener('input', () => {
         const volumeValue = volumeSlider.value;
@@ -39,30 +38,6 @@ window.onload = function () {
             volumeIcon.style.backgroundImage = 'url(../assets/settings/volume_level_3.png)';
         }
     });
-
-    /**
-     * @function
-     * @name adjustVolume
-     * @description This functions will increase or decrease the volume level depending on what the user has input in the slider. It is called when the slider moves.
-     * @version 1.0
-     */
-    // function adjustVolume() {
-    //     const volumeValue = volumeSlider.value;
-    //     const musicAudio = document.getElementById('background-sound');
-    //     const volumeIcon = document.getElementById('volume-img');
-    //     musicAudio.volume = volumeValue / 100;
-
-    //     // set image of volume slider
-    //     if (volumeValue == 0) {
-    //         volumeIcon.style.backgroundImage = 'url(../assets/settings/volume_level_0.png)';
-    //     } else if (volumeValue >= 1 && volumeValue < 33) {
-    //         volumeIcon.style.backgroundImage = 'url(../assets/settings/volume_level_1.png)';
-    //     } else if (volumeValue >= 33 && volumeValue < 67) {
-    //         volumeIcon.style.backgroundImage = 'url(../assets/settings/volume_level_2.png)';
-    //     } else {
-    //         volumeIcon.style.backgroundImage = 'url(../assets/settings/volume_level_3.png)';
-    //     }
-    // }
 
     const welcomeButton = document.getElementById('start-button');
     welcomeButton.addEventListener('click', () => {
