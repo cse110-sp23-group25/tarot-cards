@@ -24,7 +24,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Card.html">Card</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Deck.html">Deck</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#adjustVolume">adjustVolume</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#allFlipped">allFlipped</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#displayFortune">displayFortune</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Draw">Draw</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#flipCard">flipCard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateDeck">generateDeck</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getAlt">getAlt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getFortunes">getFortunes</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getImg">getImg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getName">getName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#main">main</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#shuffleCards">shuffleCards</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#toggleSettings">toggleSettings</a></span></li>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Card.html">Card</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="Deck.html">Deck</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#adjustVolume">adjustVolume</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#allFlipped">allFlipped</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#displayFortune">displayFortune</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#Draw">Draw</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#flipCard">flipCard</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateDeck">generateDeck</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getAlt">getAlt</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getFortunes">getFortunes</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getImg">getImg</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getName">getName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#init">init</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#main">main</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#shuffleCards">shuffleCards</a></span></li>
 </nav>
 
 <div id="main">
@@ -43,7 +43,7 @@
 
     const settingsPopupElem = document.getElementById('settings-popup');
     settingsPopupElem.style.display = "none";
-    // toggleSettings();
+    //allows for the behavior of the volume button. It provides functionality to the button so the volume settings appear when the button is clicked.
     const settingsButton = document.getElementById('volume-button');
     const settingsPopup = document.getElementById('settings-popup');
     settingsButton.addEventListener('click', () => {
@@ -61,15 +61,9 @@
 
     // handle volume
     const volumeSlider = document.getElementById('volume-slider');
-    volumeSlider.addEventListener('input', adjustVolume);
-
-    /**
-     * @function
-     * @name adjustVolume
-     * @description This functions will increase or decrease the volume level depending on what the user has input in the slider. It is called when the slider moves.
-     * @version 1.0
-     */
-    function adjustVolume() {
+    // volumeSlider.addEventListener('input', adjustVolume);
+    // change volume
+    volumeSlider.addEventListener('input', () => {
         const volumeValue = volumeSlider.value;
         const musicAudio = document.getElementById('background-sound');
         const volumeIcon = document.getElementById('volume-img');
@@ -85,7 +79,31 @@
         } else {
             volumeIcon.style.backgroundImage = 'url(../assets/settings/volume_level_3.png)';
         }
-    }
+    });
+
+    /**
+     * @function
+     * @name adjustVolume
+     * @description This functions will increase or decrease the volume level depending on what the user has input in the slider. It is called when the slider moves.
+     * @version 1.0
+     */
+    // function adjustVolume() {
+    //     const volumeValue = volumeSlider.value;
+    //     const musicAudio = document.getElementById('background-sound');
+    //     const volumeIcon = document.getElementById('volume-img');
+    //     musicAudio.volume = volumeValue / 100;
+
+    //     // set image of volume slider
+    //     if (volumeValue == 0) {
+    //         volumeIcon.style.backgroundImage = 'url(../assets/settings/volume_level_0.png)';
+    //     } else if (volumeValue >= 1 &amp;&amp; volumeValue &lt; 33) {
+    //         volumeIcon.style.backgroundImage = 'url(../assets/settings/volume_level_1.png)';
+    //     } else if (volumeValue >= 33 &amp;&amp; volumeValue &lt; 67) {
+    //         volumeIcon.style.backgroundImage = 'url(../assets/settings/volume_level_2.png)';
+    //     } else {
+    //         volumeIcon.style.backgroundImage = 'url(../assets/settings/volume_level_3.png)';
+    //     }
+    // }
 
     const welcomeButton = document.getElementById('start-button');
     welcomeButton.addEventListener('click', () => {
@@ -99,24 +117,6 @@
         }, 2000);
     });
 };
-
-/**
- * @function
- * @name toggleSettings
- * @description This method allows for the behavior of the volume button. It provides functionality to the button so the volume settings appear when the button is clicked.
- * @version 1.0
- */
-// function toggleSettings() {
-//     const settingsButton = document.getElementById('volume-button');
-//     const settingsPopup = document.getElementById('settings-popup');
-//     settingsButton.addEventListener('click', () => {
-//         if (settingsPopup.style.display == "none") {
-//             settingsPopup.style.display = "flex";
-//         } else {
-//             settingsPopup.style.display = "none";
-//         }
-//     });
-// }
 
 /**
  * @function
@@ -504,7 +504,7 @@ module.exports = { Card, Deck, shuffleCards};</code></pre>
 <br class="clear">
 
 <footer>
-    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Mon Jun 12 2023 00:12:51 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Mon Jun 12 2023 00:20:21 GMT+0000 (Coordinated Universal Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
