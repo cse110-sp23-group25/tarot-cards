@@ -5,7 +5,7 @@
 const functions = require('../js/main.js');
 
 test('Successful card generation with valid parameters', () => {
-  let validCard = true;
+    let validCard = true;
     let name = 'example name';
     let fortuneStrings = ['str1','str2','str3','str4','str5'];
     let img = 'example/path/';
@@ -293,5 +293,5 @@ test('Volume button exists', () => {
 });
 
 test('Home button exists', () => {
-    expect(dom.window.document.querySelector('#home-button')).not.toBeNull();
+expect(dom.window.document.querySelector('#home-button')).not.toBeNull();
 });
