@@ -1,5 +1,14 @@
 # Release Notes
 
+## Version 1.0
+
+This version is our final product for CSE110 Spring 2023. From v0.2.0, we added to our CI pipeline through better test coverage integration, added a volume sider & home button, as well as adjusted some UI features such as card sizing and positioning.
+
+There are still improvements that we want to make, but given the short time scope of this course & other challenges within our groups, this is our product for now as of the end of Spring 2023.
+
+For source code, please see our [release tag](https://github.com/cse110-sp23-group25/tarot-cards/releases/tag/v1.0.0).
+
+
 ## Version 0.2
 
 This represents our work after sprint 2 in which we primarily focused on the development of the UI experience. We added animations for the cards, background music and images, & designed the page where the cards are interpreted. We also added a welcome page to greet the user instead of directly presenting them with cards. The application is now more appealing UI wise.
