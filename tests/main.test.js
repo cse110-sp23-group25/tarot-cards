@@ -293,5 +293,5 @@ test('Volume button exists', () => {
 });
 
 test('Home button exists', () => {
-expect(dom.window.document.querySelector('#home-button')).not.toBeNull();
+    expect(dom.window.document.querySelector('#home-button')).not.toBeNull();
 });
